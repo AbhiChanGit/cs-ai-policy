@@ -29,3 +29,9 @@ The first four lines were reconstructed from the Claude Code transcript timestam
 - 2026-11-17T16:34:11Z | P11 | Claude | Bug: scripted edit of timeline.py dropped the closing bracket of human_tasks (SyntaxError); fixed with Edit.
 - 2026-11-17T16:47:34Z | P11 | Claude | Published: public GitHub repo AbhiChanGit/cs-ai-policy, GitHub Pages from main /docs; commit author set to the GitHub noreply address.
 - 2026-11-17T17:13:59Z | P11 | Claude | Renamed stale timeline heading 'Still to do by Abhishek' to reflect delegated task status.
+- 2026-11-17T16:47:18Z | P8 | Human | Logged in to GitHub (gh auth login) with his own account, which enabled the push and the GitHub Pages publish. (Backfilled at 2026-11-17T17:41:32Z from the session transcript; event time shown.)
+- 2026-11-17T17:13:30Z | P10 | Human | Set the talk to 5 to 7 minutes and asked for a live demo path through the site; this produced the 7 slide deck with a demo slide and backup slides. (Backfilled at 2026-11-17T17:41:32Z from the session transcript; event time shown.)
+- 2026-11-17T17:40:39Z | P7 | Human | Reviewed the contribution split on the timeline page and decided to backfill real human actions missing from the log rather than reassign Claude's steps. (Backfilled at 2026-11-17T17:41:32Z from the session transcript; event time shown.)
+- 2026-11-17T17:41:32Z | P7 | Claude | Backfilled 3 Human entries from transcript timestamps (P8 GitHub login, P10 talk format, P7 log review); removed the check-task table from the timeline page; added missing PROMPTS entries.
+- 2026-11-17T17:41:58Z | P7 | Claude | Ordering test failed on the 3 backfilled lines (run kept). Changed it to check write order: a backfilled line must state 'Backfilled at <time>', that time must be in order, and the event time must be earlier.
+- 2026-11-17T17:42:20Z | P7 | Claude | Fixed own typo in the new test (used key 'summary', the field is 'text').

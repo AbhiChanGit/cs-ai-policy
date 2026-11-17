@@ -77,9 +77,15 @@ def test_progress_lines_all_parse():
 
 
 def test_progress_timestamps_in_order():
-    """PROGRESS.md timestamps never go backwards (append-only log)."""
-    ts = [e["ts"] for e in timeline.read_progress()]
-    assert ts == sorted(ts)
+    """PROGRESS.md never goes backwards: each line's write time (its timestamp, or the 'Backfilled at' time for a line that records an earlier event) is in order."""
+    import re
+    written = []
+    for e in timeline.read_progress():
+        m = re.search(r"Backfilled at (\S+Z)", e["text"])
+        written.append(m.group(1) if m else e["ts"])
+        if m:
+            assert e["ts"] <= m.group(1), "a backfilled event cannot be later than when it was logged"
+    assert written == sorted(written)
 
 
 def test_progress_actors_valid():

@@ -4199,5 +4199,1358 @@
     "message": ""
    }
   ]
+ },
+ {
+  "timestamp": "2026-11-17T17:41:33Z",
+  "label": "P7 human backfill",
+  "total": 44,
+  "passed": 43,
+  "failed": 1,
+  "skipped": 0,
+  "pytest_exit_code": 1,
+  "results": [
+   {
+    "id": "tests/test_analysis.py::test_every_institution_is_coded",
+    "name": "test_every_institution_is_coded",
+    "file": "test_analysis.py",
+    "phase": "P3",
+    "doc": "coded.csv covers exactly the institutions in policies.csv.",
+    "outcome": "passed",
+    "duration_s": 0.0014,
+    "message": ""
+   },
+   {
+    "id": "tests/test_analysis.py::test_every_se_course_is_coded",
+    "name": "test_every_se_course_is_coded",
+    "file": "test_analysis.py",
+    "phase": "P3",
+    "doc": "se_coded.csv covers exactly the courses in se_courses.csv.",
+    "outcome": "passed",
+    "duration_s": 0.0012,
+    "message": ""
+   },
+   {
+    "id": "tests/test_analysis.py::test_label_values_in_codebook",
+    "name": "test_label_values_in_codebook",
+    "file": "test_analysis.py",
+    "phase": "P3",
+    "doc": "Every label value is one the codebook defines (no invented categories).",
+    "outcome": "passed",
+    "duration_s": 0.0008,
+    "message": ""
+   },
+   {
+    "id": "tests/test_analysis.py::test_codebook_documents_every_value",
+    "name": "test_codebook_documents_every_value",
+    "file": "test_analysis.py",
+    "phase": "P3",
+    "doc": "Every label value used in the code appears in codebook.md.",
+    "outcome": "passed",
+    "duration_s": 0.0006,
+    "message": ""
+   },
+   {
+    "id": "tests/test_analysis.py::test_stance_and_tone_quotes_appear_in_raw_text",
+    "name": "test_stance_and_tone_quotes_appear_in_raw_text",
+    "file": "test_analysis.py",
+    "phase": "P3",
+    "doc": "Each stance and tone quote is found word for word in that institution's raw excerpt.",
+    "outcome": "passed",
+    "duration_s": 0.0118,
+    "message": ""
+   },
+   {
+    "id": "tests/test_analysis.py::test_collab_yes_has_quote_in_raw_text",
+    "name": "test_collab_yes_has_quote_in_raw_text",
+    "file": "test_analysis.py",
+    "phase": "P3",
+    "doc": "Every ai_collaboration = yes label cites a partner-style quote found in the raw text.",
+    "outcome": "passed",
+    "duration_s": 0.0024,
+    "message": ""
+   },
+   {
+    "id": "tests/test_analysis.py::test_se_quotes_appear_in_raw_text",
+    "name": "test_se_quotes_appear_in_raw_text",
+    "file": "test_analysis.py",
+    "phase": "P3",
+    "doc": "Each SE course stance quote is found word for word in that course's raw excerpt.",
+    "outcome": "passed",
+    "duration_s": 0.004,
+    "message": ""
+   },
+   {
+    "id": "tests/test_analysis.py::test_findings_counts_equal_csv",
+    "name": "test_findings_counts_equal_csv",
+    "file": "test_analysis.py",
+    "phase": "P3",
+    "doc": "Dashboard stance, tone and collaboration counts equal a direct count of coded.csv.",
+    "outcome": "passed",
+    "duration_s": 0.0007,
+    "message": ""
+   },
+   {
+    "id": "tests/test_analysis.py::test_findings_totals_equal_sample",
+    "name": "test_findings_totals_equal_sample",
+    "file": "test_analysis.py",
+    "phase": "P3",
+    "doc": "Every chart's bars add up to the sample size (nothing dropped or double counted).",
+    "outcome": "passed",
+    "duration_s": 0.0002,
+    "message": ""
+   },
+   {
+    "id": "tests/test_analysis.py::test_stance_by_level_adds_up",
+    "name": "test_stance_by_level_adds_up",
+    "file": "test_analysis.py",
+    "phase": "P3",
+    "doc": "Stance-by-level cross tab sums back to the overall stance counts.",
+    "outcome": "passed",
+    "duration_s": 0.0002,
+    "message": ""
+   },
+   {
+    "id": "tests/test_analysis.py::test_kappa_perfect_agreement",
+    "name": "test_kappa_perfect_agreement",
+    "file": "test_analysis.py",
+    "phase": "P3",
+    "doc": "cohen_kappa returns 1.0 when two coders agree on everything.",
+    "outcome": "passed",
+    "duration_s": 0.0002,
+    "message": ""
+   },
+   {
+    "id": "tests/test_analysis.py::test_kappa_known_value",
+    "name": "test_kappa_known_value",
+    "file": "test_analysis.py",
+    "phase": "P3",
+    "doc": "cohen_kappa matches a hand-computed example (po=0.5, pe=0.5 gives kappa 0).",
+    "outcome": "passed",
+    "duration_s": 0.0003,
+    "message": ""
+   },
+   {
+    "id": "tests/test_analysis.py::test_kappa_textbook_example",
+    "name": "test_kappa_textbook_example",
+    "file": "test_analysis.py",
+    "phase": "P3",
+    "doc": "cohen_kappa matches the standard 50-item example (20+15 agree, kappa = 0.4).",
+    "outcome": "passed",
+    "duration_s": 0.0002,
+    "message": ""
+   },
+   {
+    "id": "tests/test_analysis.py::test_keyword_rule_ignores_header",
+    "name": "test_keyword_rule_ignores_header",
+    "file": "test_analysis.py",
+    "phase": "P3",
+    "doc": "Keyword rule reads only excerpt lines, so words in a URL or title cannot trigger it.",
+    "outcome": "passed",
+    "duration_s": 0.0002,
+    "message": ""
+   },
+   {
+    "id": "tests/test_analysis.py::test_keyword_kappa_reported",
+    "name": "test_keyword_kappa_reported",
+    "file": "test_analysis.py",
+    "phase": "P3",
+    "doc": "Keyword-vs-Claude agreement is computed and every disagreement is listed.",
+    "outcome": "passed",
+    "duration_s": 0.0001,
+    "message": ""
+   },
+   {
+    "id": "tests/test_analysis.py::test_blind_sample_status",
+    "name": "test_blind_sample_status",
+    "file": "test_analysis.py",
+    "phase": "P3",
+    "doc": "Blind second-coder check: 10 rows exist, the coder is named, and if filled, kappa is computed (pending is reported, not faked).",
+    "outcome": "passed",
+    "duration_s": 0.0001,
+    "message": ""
+   },
+   {
+    "id": "tests/test_analysis.py::test_blind_labels_use_codebook_values",
+    "name": "test_blind_labels_use_codebook_values",
+    "file": "test_analysis.py",
+    "phase": "P3",
+    "doc": "Every blind label is an allowed codebook value, so a typo cannot pass as a disagreement.",
+    "outcome": "passed",
+    "duration_s": 0.0006,
+    "message": ""
+   },
+   {
+    "id": "tests/test_data.py::test_at_least_25_institutions",
+    "name": "test_at_least_25_institutions",
+    "file": "test_data.py",
+    "phase": "P2",
+    "doc": "SPEC P2: policies.csv has at least 25 institutions.",
+    "outcome": "passed",
+    "duration_s": 0.0005,
+    "message": ""
+   },
+   {
+    "id": "tests/test_data.py::test_at_least_8_se_courses",
+    "name": "test_at_least_8_se_courses",
+    "file": "test_data.py",
+    "phase": "P2",
+    "doc": "SPEC P2: se_courses.csv has at least 8 software engineering courses.",
+    "outcome": "passed",
+    "duration_s": 0.0004,
+    "message": ""
+   },
+   {
+    "id": "tests/test_data.py::test_ids_unique",
+    "name": "test_ids_unique",
+    "file": "test_data.py",
+    "phase": "P2",
+    "doc": "No institution or course appears twice (duplicates would inflate counts).",
+    "outcome": "passed",
+    "duration_s": 0.0007,
+    "message": ""
+   },
+   {
+    "id": "tests/test_data.py::test_institution_names_unique",
+    "name": "test_institution_names_unique",
+    "file": "test_data.py",
+    "phase": "P2",
+    "doc": "Each institution is sampled once in policies.csv (one source per school).",
+    "outcome": "passed",
+    "duration_s": 0.0005,
+    "message": ""
+   },
+   {
+    "id": "tests/test_data.py::test_every_row_has_url_and_access_date",
+    "name": "test_every_row_has_url_and_access_date",
+    "file": "test_data.py",
+    "phase": "P2",
+    "doc": "Every source row has an http(s) URL and a YYYY-MM-DD access date.",
+    "outcome": "passed",
+    "duration_s": 0.001,
+    "message": ""
+   },
+   {
+    "id": "tests/test_data.py::test_level_values_valid",
+    "name": "test_level_values_valid",
+    "file": "test_data.py",
+    "phase": "P2",
+    "doc": "Source level is one of department / college / university.",
+    "outcome": "passed",
+    "duration_s": 0.0005,
+    "message": ""
+   },
+   {
+    "id": "tests/test_data.py::test_raw_excerpt_exists_for_every_row",
+    "name": "test_raw_excerpt_exists_for_every_row",
+    "file": "test_data.py",
+    "phase": "P2",
+    "doc": "Every source has a non-empty raw excerpt file with at least 2 excerpt lines.",
+    "outcome": "passed",
+    "duration_s": 0.0068,
+    "message": ""
+   },
+   {
+    "id": "tests/test_data.py::test_raw_header_url_matches_csv",
+    "name": "test_raw_header_url_matches_csv",
+    "file": "test_data.py",
+    "phase": "P2",
+    "doc": "The URL inside each raw file matches the CSV row (no mixed-up files).",
+    "outcome": "passed",
+    "duration_s": 0.0063,
+    "message": ""
+   },
+   {
+    "id": "tests/test_data.py::test_no_orphan_raw_files",
+    "name": "test_no_orphan_raw_files",
+    "file": "test_data.py",
+    "phase": "P2",
+    "doc": "Every raw file belongs to a CSV row (nothing collected and silently dropped).",
+    "outcome": "passed",
+    "duration_s": 0.0009,
+    "message": ""
+   },
+   {
+    "id": "tests/test_data.py::test_us_institutions_only",
+    "name": "test_us_institutions_only",
+    "file": "test_data.py",
+    "phase": "P2",
+    "doc": "Sample is US only (state column is a 2-letter US code).",
+    "outcome": "passed",
+    "duration_s": 0.0006,
+    "message": ""
+   },
+   {
+    "id": "tests/test_site.py::test_all_four_pages_exist",
+    "name": "test_all_four_pages_exist",
+    "file": "test_site.py",
+    "phase": "P4",
+    "doc": "The four required pages exist: findings, validation, timeline, tokens.",
+    "outcome": "passed",
+    "duration_s": 0.0002,
+    "message": ""
+   },
+   {
+    "id": "tests/test_site.py::test_local_references_resolve",
+    "name": "test_local_references_resolve",
+    "file": "test_site.py",
+    "phase": "P4",
+    "doc": "Every local src/href in every page points to a file that exists (no broken links).",
+    "outcome": "passed",
+    "duration_s": 0.0282,
+    "message": ""
+   },
+   {
+    "id": "tests/test_site.py::test_no_external_scripts",
+    "name": "test_no_external_scripts",
+    "file": "test_site.py",
+    "phase": "P4",
+    "doc": "Pages load no third-party scripts, so they work offline and on GitHub Pages.",
+    "outcome": "passed",
+    "duration_s": 0.0012,
+    "message": ""
+   },
+   {
+    "id": "tests/test_site.py::test_every_page_links_every_page",
+    "name": "test_every_page_links_every_page",
+    "file": "test_site.py",
+    "phase": "P4",
+    "doc": "Shared nav lists all four pages.",
+    "outcome": "passed",
+    "duration_s": 0.0006,
+    "message": ""
+   },
+   {
+    "id": "tests/test_site.py::test_data_files_match_json",
+    "name": "test_data_files_match_json",
+    "file": "test_site.py",
+    "phase": "P4",
+    "doc": "Each docs/data/*.js twin holds exactly the same data as its .json file.",
+    "outcome": "passed",
+    "duration_s": 0.1228,
+    "message": ""
+   },
+   {
+    "id": "tests/test_site.py::test_findings_page_has_no_typed_counts",
+    "name": "test_findings_page_has_no_typed_counts",
+    "file": "test_site.py",
+    "phase": "P4",
+    "doc": "Key findings text on index.html is generated from data (no hard-coded 'N of M' numbers).",
+    "outcome": "passed",
+    "duration_s": 0.0006,
+    "message": ""
+   },
+   {
+    "id": "tests/test_site.py::test_readme_links_pages",
+    "name": "test_readme_links_pages",
+    "file": "test_site.py",
+    "phase": "P4",
+    "doc": "README links all four published pages.",
+    "outcome": "passed",
+    "duration_s": 0.0007,
+    "message": ""
+   },
+   {
+    "id": "tests/test_tokens_timeline.py::test_duplicate_message_ids_counted_once",
+    "name": "test_duplicate_message_ids_counted_once",
+    "file": "test_tokens_timeline.py",
+    "phase": "P7",
+    "doc": "One API response logged on several lines (same message id) is counted once, not per line.",
+    "outcome": "passed",
+    "duration_s": 0.0024,
+    "message": ""
+   },
+   {
+    "id": "tests/test_tokens_timeline.py::test_context_is_sum_of_input_kinds",
+    "name": "test_context_is_sum_of_input_kinds",
+    "file": "test_tokens_timeline.py",
+    "phase": "P7",
+    "doc": "Context size = fresh input + cache write + cache read (output excluded).",
+    "outcome": "passed",
+    "duration_s": 0.0088,
+    "message": ""
+   },
+   {
+    "id": "tests/test_tokens_timeline.py::test_compact_and_clear_events_detected",
+    "name": "test_compact_and_clear_events_detected",
+    "file": "test_tokens_timeline.py",
+    "phase": "P7",
+    "doc": "Compaction boundaries and /clear commands in a transcript are reported as events.",
+    "outcome": "passed",
+    "duration_s": 0.0095,
+    "message": ""
+   },
+   {
+    "id": "tests/test_tokens_timeline.py::test_phase_assigned_to_next_log_entry",
+    "name": "test_phase_assigned_to_next_log_entry",
+    "file": "test_tokens_timeline.py",
+    "phase": "P7",
+    "doc": "A call is assigned to the phase of the first PROGRESS entry at or after it.",
+    "outcome": "passed",
+    "duration_s": 0.0002,
+    "message": ""
+   },
+   {
+    "id": "tests/test_tokens_timeline.py::test_clear_estimate_toy_example",
+    "name": "test_clear_estimate_toy_example",
+    "file": "test_tokens_timeline.py",
+    "phase": "P7",
+    "doc": "/clear estimate: within a phase, only context above the phase's first call counts as avoidable.",
+    "outcome": "passed",
+    "duration_s": 0.0002,
+    "message": ""
+   },
+   {
+    "id": "tests/test_tokens_timeline.py::test_tokens_json_phase_totals_add_up",
+    "name": "test_tokens_json_phase_totals_add_up",
+    "file": "test_tokens_timeline.py",
+    "phase": "P7",
+    "doc": "Published token totals equal the sum over phases and the sum over calls.",
+    "outcome": "passed",
+    "duration_s": 0.0741,
+    "message": ""
+   },
+   {
+    "id": "tests/test_tokens_timeline.py::test_progress_lines_all_parse",
+    "name": "test_progress_lines_all_parse",
+    "file": "test_tokens_timeline.py",
+    "phase": "P7",
+    "doc": "Every bullet line in PROGRESS.md matches the log format (nothing malformed or hand-mangled).",
+    "outcome": "passed",
+    "duration_s": 0.0005,
+    "message": ""
+   },
+   {
+    "id": "tests/test_tokens_timeline.py::test_progress_timestamps_in_order",
+    "name": "test_progress_timestamps_in_order",
+    "file": "test_tokens_timeline.py",
+    "phase": "P7",
+    "doc": "PROGRESS.md timestamps never go backwards (append-only log).",
+    "outcome": "failed",
+    "duration_s": 0.0009,
+    "message": "AssertionError: assert ['2026-11-12T...:28:39Z', ...] == ['2026-11-12T...:28:39Z', ...]\n  \n  At index 24 diff: '2026-11-17T16:47:34Z' != '2026-11-17T16:47:18Z'\n  Use -v to get more diff"
+   },
+   {
+    "id": "tests/test_tokens_timeline.py::test_progress_actors_valid",
+    "name": "test_progress_actors_valid",
+    "file": "test_tokens_timeline.py",
+    "phase": "P7",
+    "doc": "Every log entry names its actor as Human or Claude.",
+    "outcome": "passed",
+    "duration_s": 0.0004,
+    "message": ""
+   },
+   {
+    "id": "tests/test_tokens_timeline.py::test_prompts_all_parsed",
+    "name": "test_prompts_all_parsed",
+    "file": "test_tokens_timeline.py",
+    "phase": "P7",
+    "doc": "Every '## ' entry in PROMPTS.md is parsed with both a human request and a Claude response.",
+    "outcome": "passed",
+    "duration_s": 0.001,
+    "message": ""
+   }
+  ]
+ },
+ {
+  "timestamp": "2026-11-17T17:41:59Z",
+  "label": "P7 backfill-aware ordering test",
+  "total": 44,
+  "passed": 43,
+  "failed": 1,
+  "skipped": 0,
+  "pytest_exit_code": 1,
+  "results": [
+   {
+    "id": "tests/test_analysis.py::test_every_institution_is_coded",
+    "name": "test_every_institution_is_coded",
+    "file": "test_analysis.py",
+    "phase": "P3",
+    "doc": "coded.csv covers exactly the institutions in policies.csv.",
+    "outcome": "passed",
+    "duration_s": 0.001,
+    "message": ""
+   },
+   {
+    "id": "tests/test_analysis.py::test_every_se_course_is_coded",
+    "name": "test_every_se_course_is_coded",
+    "file": "test_analysis.py",
+    "phase": "P3",
+    "doc": "se_coded.csv covers exactly the courses in se_courses.csv.",
+    "outcome": "passed",
+    "duration_s": 0.0006,
+    "message": ""
+   },
+   {
+    "id": "tests/test_analysis.py::test_label_values_in_codebook",
+    "name": "test_label_values_in_codebook",
+    "file": "test_analysis.py",
+    "phase": "P3",
+    "doc": "Every label value is one the codebook defines (no invented categories).",
+    "outcome": "passed",
+    "duration_s": 0.0006,
+    "message": ""
+   },
+   {
+    "id": "tests/test_analysis.py::test_codebook_documents_every_value",
+    "name": "test_codebook_documents_every_value",
+    "file": "test_analysis.py",
+    "phase": "P3",
+    "doc": "Every label value used in the code appears in codebook.md.",
+    "outcome": "passed",
+    "duration_s": 0.0004,
+    "message": ""
+   },
+   {
+    "id": "tests/test_analysis.py::test_stance_and_tone_quotes_appear_in_raw_text",
+    "name": "test_stance_and_tone_quotes_appear_in_raw_text",
+    "file": "test_analysis.py",
+    "phase": "P3",
+    "doc": "Each stance and tone quote is found word for word in that institution's raw excerpt.",
+    "outcome": "passed",
+    "duration_s": 0.0065,
+    "message": ""
+   },
+   {
+    "id": "tests/test_analysis.py::test_collab_yes_has_quote_in_raw_text",
+    "name": "test_collab_yes_has_quote_in_raw_text",
+    "file": "test_analysis.py",
+    "phase": "P3",
+    "doc": "Every ai_collaboration = yes label cites a partner-style quote found in the raw text.",
+    "outcome": "passed",
+    "duration_s": 0.0021,
+    "message": ""
+   },
+   {
+    "id": "tests/test_analysis.py::test_se_quotes_appear_in_raw_text",
+    "name": "test_se_quotes_appear_in_raw_text",
+    "file": "test_analysis.py",
+    "phase": "P3",
+    "doc": "Each SE course stance quote is found word for word in that course's raw excerpt.",
+    "outcome": "passed",
+    "duration_s": 0.002,
+    "message": ""
+   },
+   {
+    "id": "tests/test_analysis.py::test_findings_counts_equal_csv",
+    "name": "test_findings_counts_equal_csv",
+    "file": "test_analysis.py",
+    "phase": "P3",
+    "doc": "Dashboard stance, tone and collaboration counts equal a direct count of coded.csv.",
+    "outcome": "passed",
+    "duration_s": 0.0006,
+    "message": ""
+   },
+   {
+    "id": "tests/test_analysis.py::test_findings_totals_equal_sample",
+    "name": "test_findings_totals_equal_sample",
+    "file": "test_analysis.py",
+    "phase": "P3",
+    "doc": "Every chart's bars add up to the sample size (nothing dropped or double counted).",
+    "outcome": "passed",
+    "duration_s": 0.0002,
+    "message": ""
+   },
+   {
+    "id": "tests/test_analysis.py::test_stance_by_level_adds_up",
+    "name": "test_stance_by_level_adds_up",
+    "file": "test_analysis.py",
+    "phase": "P3",
+    "doc": "Stance-by-level cross tab sums back to the overall stance counts.",
+    "outcome": "passed",
+    "duration_s": 0.0001,
+    "message": ""
+   },
+   {
+    "id": "tests/test_analysis.py::test_kappa_perfect_agreement",
+    "name": "test_kappa_perfect_agreement",
+    "file": "test_analysis.py",
+    "phase": "P3",
+    "doc": "cohen_kappa returns 1.0 when two coders agree on everything.",
+    "outcome": "passed",
+    "duration_s": 0.0001,
+    "message": ""
+   },
+   {
+    "id": "tests/test_analysis.py::test_kappa_known_value",
+    "name": "test_kappa_known_value",
+    "file": "test_analysis.py",
+    "phase": "P3",
+    "doc": "cohen_kappa matches a hand-computed example (po=0.5, pe=0.5 gives kappa 0).",
+    "outcome": "passed",
+    "duration_s": 0.0003,
+    "message": ""
+   },
+   {
+    "id": "tests/test_analysis.py::test_kappa_textbook_example",
+    "name": "test_kappa_textbook_example",
+    "file": "test_analysis.py",
+    "phase": "P3",
+    "doc": "cohen_kappa matches the standard 50-item example (20+15 agree, kappa = 0.4).",
+    "outcome": "passed",
+    "duration_s": 0.0002,
+    "message": ""
+   },
+   {
+    "id": "tests/test_analysis.py::test_keyword_rule_ignores_header",
+    "name": "test_keyword_rule_ignores_header",
+    "file": "test_analysis.py",
+    "phase": "P3",
+    "doc": "Keyword rule reads only excerpt lines, so words in a URL or title cannot trigger it.",
+    "outcome": "passed",
+    "duration_s": 0.0001,
+    "message": ""
+   },
+   {
+    "id": "tests/test_analysis.py::test_keyword_kappa_reported",
+    "name": "test_keyword_kappa_reported",
+    "file": "test_analysis.py",
+    "phase": "P3",
+    "doc": "Keyword-vs-Claude agreement is computed and every disagreement is listed.",
+    "outcome": "passed",
+    "duration_s": 0.0001,
+    "message": ""
+   },
+   {
+    "id": "tests/test_analysis.py::test_blind_sample_status",
+    "name": "test_blind_sample_status",
+    "file": "test_analysis.py",
+    "phase": "P3",
+    "doc": "Blind second-coder check: 10 rows exist, the coder is named, and if filled, kappa is computed (pending is reported, not faked).",
+    "outcome": "passed",
+    "duration_s": 0.0001,
+    "message": ""
+   },
+   {
+    "id": "tests/test_analysis.py::test_blind_labels_use_codebook_values",
+    "name": "test_blind_labels_use_codebook_values",
+    "file": "test_analysis.py",
+    "phase": "P3",
+    "doc": "Every blind label is an allowed codebook value, so a typo cannot pass as a disagreement.",
+    "outcome": "passed",
+    "duration_s": 0.0003,
+    "message": ""
+   },
+   {
+    "id": "tests/test_data.py::test_at_least_25_institutions",
+    "name": "test_at_least_25_institutions",
+    "file": "test_data.py",
+    "phase": "P2",
+    "doc": "SPEC P2: policies.csv has at least 25 institutions.",
+    "outcome": "passed",
+    "duration_s": 0.0004,
+    "message": ""
+   },
+   {
+    "id": "tests/test_data.py::test_at_least_8_se_courses",
+    "name": "test_at_least_8_se_courses",
+    "file": "test_data.py",
+    "phase": "P2",
+    "doc": "SPEC P2: se_courses.csv has at least 8 software engineering courses.",
+    "outcome": "passed",
+    "duration_s": 0.0004,
+    "message": ""
+   },
+   {
+    "id": "tests/test_data.py::test_ids_unique",
+    "name": "test_ids_unique",
+    "file": "test_data.py",
+    "phase": "P2",
+    "doc": "No institution or course appears twice (duplicates would inflate counts).",
+    "outcome": "passed",
+    "duration_s": 0.0006,
+    "message": ""
+   },
+   {
+    "id": "tests/test_data.py::test_institution_names_unique",
+    "name": "test_institution_names_unique",
+    "file": "test_data.py",
+    "phase": "P2",
+    "doc": "Each institution is sampled once in policies.csv (one source per school).",
+    "outcome": "passed",
+    "duration_s": 0.0004,
+    "message": ""
+   },
+   {
+    "id": "tests/test_data.py::test_every_row_has_url_and_access_date",
+    "name": "test_every_row_has_url_and_access_date",
+    "file": "test_data.py",
+    "phase": "P2",
+    "doc": "Every source row has an http(s) URL and a YYYY-MM-DD access date.",
+    "outcome": "passed",
+    "duration_s": 0.0007,
+    "message": ""
+   },
+   {
+    "id": "tests/test_data.py::test_level_values_valid",
+    "name": "test_level_values_valid",
+    "file": "test_data.py",
+    "phase": "P2",
+    "doc": "Source level is one of department / college / university.",
+    "outcome": "passed",
+    "duration_s": 0.0004,
+    "message": ""
+   },
+   {
+    "id": "tests/test_data.py::test_raw_excerpt_exists_for_every_row",
+    "name": "test_raw_excerpt_exists_for_every_row",
+    "file": "test_data.py",
+    "phase": "P2",
+    "doc": "Every source has a non-empty raw excerpt file with at least 2 excerpt lines.",
+    "outcome": "passed",
+    "duration_s": 0.0066,
+    "message": ""
+   },
+   {
+    "id": "tests/test_data.py::test_raw_header_url_matches_csv",
+    "name": "test_raw_header_url_matches_csv",
+    "file": "test_data.py",
+    "phase": "P2",
+    "doc": "The URL inside each raw file matches the CSV row (no mixed-up files).",
+    "outcome": "passed",
+    "duration_s": 0.0057,
+    "message": ""
+   },
+   {
+    "id": "tests/test_data.py::test_no_orphan_raw_files",
+    "name": "test_no_orphan_raw_files",
+    "file": "test_data.py",
+    "phase": "P2",
+    "doc": "Every raw file belongs to a CSV row (nothing collected and silently dropped).",
+    "outcome": "passed",
+    "duration_s": 0.0009,
+    "message": ""
+   },
+   {
+    "id": "tests/test_data.py::test_us_institutions_only",
+    "name": "test_us_institutions_only",
+    "file": "test_data.py",
+    "phase": "P2",
+    "doc": "Sample is US only (state column is a 2-letter US code).",
+    "outcome": "passed",
+    "duration_s": 0.0005,
+    "message": ""
+   },
+   {
+    "id": "tests/test_site.py::test_all_four_pages_exist",
+    "name": "test_all_four_pages_exist",
+    "file": "test_site.py",
+    "phase": "P4",
+    "doc": "The four required pages exist: findings, validation, timeline, tokens.",
+    "outcome": "passed",
+    "duration_s": 0.0002,
+    "message": ""
+   },
+   {
+    "id": "tests/test_site.py::test_local_references_resolve",
+    "name": "test_local_references_resolve",
+    "file": "test_site.py",
+    "phase": "P4",
+    "doc": "Every local src/href in every page points to a file that exists (no broken links).",
+    "outcome": "passed",
+    "duration_s": 0.0015,
+    "message": ""
+   },
+   {
+    "id": "tests/test_site.py::test_no_external_scripts",
+    "name": "test_no_external_scripts",
+    "file": "test_site.py",
+    "phase": "P4",
+    "doc": "Pages load no third-party scripts, so they work offline and on GitHub Pages.",
+    "outcome": "passed",
+    "duration_s": 0.001,
+    "message": ""
+   },
+   {
+    "id": "tests/test_site.py::test_every_page_links_every_page",
+    "name": "test_every_page_links_every_page",
+    "file": "test_site.py",
+    "phase": "P4",
+    "doc": "Shared nav lists all four pages.",
+    "outcome": "passed",
+    "duration_s": 0.0004,
+    "message": ""
+   },
+   {
+    "id": "tests/test_site.py::test_data_files_match_json",
+    "name": "test_data_files_match_json",
+    "file": "test_site.py",
+    "phase": "P4",
+    "doc": "Each docs/data/*.js twin holds exactly the same data as its .json file.",
+    "outcome": "passed",
+    "duration_s": 0.0928,
+    "message": ""
+   },
+   {
+    "id": "tests/test_site.py::test_findings_page_has_no_typed_counts",
+    "name": "test_findings_page_has_no_typed_counts",
+    "file": "test_site.py",
+    "phase": "P4",
+    "doc": "Key findings text on index.html is generated from data (no hard-coded 'N of M' numbers).",
+    "outcome": "passed",
+    "duration_s": 0.0005,
+    "message": ""
+   },
+   {
+    "id": "tests/test_site.py::test_readme_links_pages",
+    "name": "test_readme_links_pages",
+    "file": "test_site.py",
+    "phase": "P4",
+    "doc": "README links all four published pages.",
+    "outcome": "passed",
+    "duration_s": 0.0004,
+    "message": ""
+   },
+   {
+    "id": "tests/test_tokens_timeline.py::test_duplicate_message_ids_counted_once",
+    "name": "test_duplicate_message_ids_counted_once",
+    "file": "test_tokens_timeline.py",
+    "phase": "P7",
+    "doc": "One API response logged on several lines (same message id) is counted once, not per line.",
+    "outcome": "passed",
+    "duration_s": 0.0028,
+    "message": ""
+   },
+   {
+    "id": "tests/test_tokens_timeline.py::test_context_is_sum_of_input_kinds",
+    "name": "test_context_is_sum_of_input_kinds",
+    "file": "test_tokens_timeline.py",
+    "phase": "P7",
+    "doc": "Context size = fresh input + cache write + cache read (output excluded).",
+    "outcome": "passed",
+    "duration_s": 0.0022,
+    "message": ""
+   },
+   {
+    "id": "tests/test_tokens_timeline.py::test_compact_and_clear_events_detected",
+    "name": "test_compact_and_clear_events_detected",
+    "file": "test_tokens_timeline.py",
+    "phase": "P7",
+    "doc": "Compaction boundaries and /clear commands in a transcript are reported as events.",
+    "outcome": "passed",
+    "duration_s": 0.0023,
+    "message": ""
+   },
+   {
+    "id": "tests/test_tokens_timeline.py::test_phase_assigned_to_next_log_entry",
+    "name": "test_phase_assigned_to_next_log_entry",
+    "file": "test_tokens_timeline.py",
+    "phase": "P7",
+    "doc": "A call is assigned to the phase of the first PROGRESS entry at or after it.",
+    "outcome": "passed",
+    "duration_s": 0.0002,
+    "message": ""
+   },
+   {
+    "id": "tests/test_tokens_timeline.py::test_clear_estimate_toy_example",
+    "name": "test_clear_estimate_toy_example",
+    "file": "test_tokens_timeline.py",
+    "phase": "P7",
+    "doc": "/clear estimate: within a phase, only context above the phase's first call counts as avoidable.",
+    "outcome": "passed",
+    "duration_s": 0.0001,
+    "message": ""
+   },
+   {
+    "id": "tests/test_tokens_timeline.py::test_tokens_json_phase_totals_add_up",
+    "name": "test_tokens_json_phase_totals_add_up",
+    "file": "test_tokens_timeline.py",
+    "phase": "P7",
+    "doc": "Published token totals equal the sum over phases and the sum over calls.",
+    "outcome": "passed",
+    "duration_s": 0.0702,
+    "message": ""
+   },
+   {
+    "id": "tests/test_tokens_timeline.py::test_progress_lines_all_parse",
+    "name": "test_progress_lines_all_parse",
+    "file": "test_tokens_timeline.py",
+    "phase": "P7",
+    "doc": "Every bullet line in PROGRESS.md matches the log format (nothing malformed or hand-mangled).",
+    "outcome": "passed",
+    "duration_s": 0.0004,
+    "message": ""
+   },
+   {
+    "id": "tests/test_tokens_timeline.py::test_progress_timestamps_in_order",
+    "name": "test_progress_timestamps_in_order",
+    "file": "test_tokens_timeline.py",
+    "phase": "P7",
+    "doc": "PROGRESS.md never goes backwards: each line's write time (its timestamp, or the 'Backfilled at' time for a line that records an earlier event) is in order.",
+    "outcome": "failed",
+    "duration_s": 0.0004,
+    "message": "KeyError: 'summary'"
+   },
+   {
+    "id": "tests/test_tokens_timeline.py::test_progress_actors_valid",
+    "name": "test_progress_actors_valid",
+    "file": "test_tokens_timeline.py",
+    "phase": "P7",
+    "doc": "Every log entry names its actor as Human or Claude.",
+    "outcome": "passed",
+    "duration_s": 0.0005,
+    "message": ""
+   },
+   {
+    "id": "tests/test_tokens_timeline.py::test_prompts_all_parsed",
+    "name": "test_prompts_all_parsed",
+    "file": "test_tokens_timeline.py",
+    "phase": "P7",
+    "doc": "Every '## ' entry in PROMPTS.md is parsed with both a human request and a Claude response.",
+    "outcome": "passed",
+    "duration_s": 0.0009,
+    "message": ""
+   }
+  ]
+ },
+ {
+  "timestamp": "2026-11-17T17:42:20Z",
+  "label": "P7 backfill-aware ordering test, fixed",
+  "total": 44,
+  "passed": 44,
+  "failed": 0,
+  "skipped": 0,
+  "pytest_exit_code": 0,
+  "results": [
+   {
+    "id": "tests/test_analysis.py::test_every_institution_is_coded",
+    "name": "test_every_institution_is_coded",
+    "file": "test_analysis.py",
+    "phase": "P3",
+    "doc": "coded.csv covers exactly the institutions in policies.csv.",
+    "outcome": "passed",
+    "duration_s": 0.0008,
+    "message": ""
+   },
+   {
+    "id": "tests/test_analysis.py::test_every_se_course_is_coded",
+    "name": "test_every_se_course_is_coded",
+    "file": "test_analysis.py",
+    "phase": "P3",
+    "doc": "se_coded.csv covers exactly the courses in se_courses.csv.",
+    "outcome": "passed",
+    "duration_s": 0.0005,
+    "message": ""
+   },
+   {
+    "id": "tests/test_analysis.py::test_label_values_in_codebook",
+    "name": "test_label_values_in_codebook",
+    "file": "test_analysis.py",
+    "phase": "P3",
+    "doc": "Every label value is one the codebook defines (no invented categories).",
+    "outcome": "passed",
+    "duration_s": 0.0006,
+    "message": ""
+   },
+   {
+    "id": "tests/test_analysis.py::test_codebook_documents_every_value",
+    "name": "test_codebook_documents_every_value",
+    "file": "test_analysis.py",
+    "phase": "P3",
+    "doc": "Every label value used in the code appears in codebook.md.",
+    "outcome": "passed",
+    "duration_s": 0.0003,
+    "message": ""
+   },
+   {
+    "id": "tests/test_analysis.py::test_stance_and_tone_quotes_appear_in_raw_text",
+    "name": "test_stance_and_tone_quotes_appear_in_raw_text",
+    "file": "test_analysis.py",
+    "phase": "P3",
+    "doc": "Each stance and tone quote is found word for word in that institution's raw excerpt.",
+    "outcome": "passed",
+    "duration_s": 0.0051,
+    "message": ""
+   },
+   {
+    "id": "tests/test_analysis.py::test_collab_yes_has_quote_in_raw_text",
+    "name": "test_collab_yes_has_quote_in_raw_text",
+    "file": "test_analysis.py",
+    "phase": "P3",
+    "doc": "Every ai_collaboration = yes label cites a partner-style quote found in the raw text.",
+    "outcome": "passed",
+    "duration_s": 0.0017,
+    "message": ""
+   },
+   {
+    "id": "tests/test_analysis.py::test_se_quotes_appear_in_raw_text",
+    "name": "test_se_quotes_appear_in_raw_text",
+    "file": "test_analysis.py",
+    "phase": "P3",
+    "doc": "Each SE course stance quote is found word for word in that course's raw excerpt.",
+    "outcome": "passed",
+    "duration_s": 0.0017,
+    "message": ""
+   },
+   {
+    "id": "tests/test_analysis.py::test_findings_counts_equal_csv",
+    "name": "test_findings_counts_equal_csv",
+    "file": "test_analysis.py",
+    "phase": "P3",
+    "doc": "Dashboard stance, tone and collaboration counts equal a direct count of coded.csv.",
+    "outcome": "passed",
+    "duration_s": 0.0005,
+    "message": ""
+   },
+   {
+    "id": "tests/test_analysis.py::test_findings_totals_equal_sample",
+    "name": "test_findings_totals_equal_sample",
+    "file": "test_analysis.py",
+    "phase": "P3",
+    "doc": "Every chart's bars add up to the sample size (nothing dropped or double counted).",
+    "outcome": "passed",
+    "duration_s": 0.0001,
+    "message": ""
+   },
+   {
+    "id": "tests/test_analysis.py::test_stance_by_level_adds_up",
+    "name": "test_stance_by_level_adds_up",
+    "file": "test_analysis.py",
+    "phase": "P3",
+    "doc": "Stance-by-level cross tab sums back to the overall stance counts.",
+    "outcome": "passed",
+    "duration_s": 0.0001,
+    "message": ""
+   },
+   {
+    "id": "tests/test_analysis.py::test_kappa_perfect_agreement",
+    "name": "test_kappa_perfect_agreement",
+    "file": "test_analysis.py",
+    "phase": "P3",
+    "doc": "cohen_kappa returns 1.0 when two coders agree on everything.",
+    "outcome": "passed",
+    "duration_s": 0.0001,
+    "message": ""
+   },
+   {
+    "id": "tests/test_analysis.py::test_kappa_known_value",
+    "name": "test_kappa_known_value",
+    "file": "test_analysis.py",
+    "phase": "P3",
+    "doc": "cohen_kappa matches a hand-computed example (po=0.5, pe=0.5 gives kappa 0).",
+    "outcome": "passed",
+    "duration_s": 0.0002,
+    "message": ""
+   },
+   {
+    "id": "tests/test_analysis.py::test_kappa_textbook_example",
+    "name": "test_kappa_textbook_example",
+    "file": "test_analysis.py",
+    "phase": "P3",
+    "doc": "cohen_kappa matches the standard 50-item example (20+15 agree, kappa = 0.4).",
+    "outcome": "passed",
+    "duration_s": 0.0002,
+    "message": ""
+   },
+   {
+    "id": "tests/test_analysis.py::test_keyword_rule_ignores_header",
+    "name": "test_keyword_rule_ignores_header",
+    "file": "test_analysis.py",
+    "phase": "P3",
+    "doc": "Keyword rule reads only excerpt lines, so words in a URL or title cannot trigger it.",
+    "outcome": "passed",
+    "duration_s": 0.0001,
+    "message": ""
+   },
+   {
+    "id": "tests/test_analysis.py::test_keyword_kappa_reported",
+    "name": "test_keyword_kappa_reported",
+    "file": "test_analysis.py",
+    "phase": "P3",
+    "doc": "Keyword-vs-Claude agreement is computed and every disagreement is listed.",
+    "outcome": "passed",
+    "duration_s": 0.0001,
+    "message": ""
+   },
+   {
+    "id": "tests/test_analysis.py::test_blind_sample_status",
+    "name": "test_blind_sample_status",
+    "file": "test_analysis.py",
+    "phase": "P3",
+    "doc": "Blind second-coder check: 10 rows exist, the coder is named, and if filled, kappa is computed (pending is reported, not faked).",
+    "outcome": "passed",
+    "duration_s": 0.0001,
+    "message": ""
+   },
+   {
+    "id": "tests/test_analysis.py::test_blind_labels_use_codebook_values",
+    "name": "test_blind_labels_use_codebook_values",
+    "file": "test_analysis.py",
+    "phase": "P3",
+    "doc": "Every blind label is an allowed codebook value, so a typo cannot pass as a disagreement.",
+    "outcome": "passed",
+    "duration_s": 0.0003,
+    "message": ""
+   },
+   {
+    "id": "tests/test_data.py::test_at_least_25_institutions",
+    "name": "test_at_least_25_institutions",
+    "file": "test_data.py",
+    "phase": "P2",
+    "doc": "SPEC P2: policies.csv has at least 25 institutions.",
+    "outcome": "passed",
+    "duration_s": 0.0004,
+    "message": ""
+   },
+   {
+    "id": "tests/test_data.py::test_at_least_8_se_courses",
+    "name": "test_at_least_8_se_courses",
+    "file": "test_data.py",
+    "phase": "P2",
+    "doc": "SPEC P2: se_courses.csv has at least 8 software engineering courses.",
+    "outcome": "passed",
+    "duration_s": 0.0003,
+    "message": ""
+   },
+   {
+    "id": "tests/test_data.py::test_ids_unique",
+    "name": "test_ids_unique",
+    "file": "test_data.py",
+    "phase": "P2",
+    "doc": "No institution or course appears twice (duplicates would inflate counts).",
+    "outcome": "passed",
+    "duration_s": 0.0005,
+    "message": ""
+   },
+   {
+    "id": "tests/test_data.py::test_institution_names_unique",
+    "name": "test_institution_names_unique",
+    "file": "test_data.py",
+    "phase": "P2",
+    "doc": "Each institution is sampled once in policies.csv (one source per school).",
+    "outcome": "passed",
+    "duration_s": 0.0004,
+    "message": ""
+   },
+   {
+    "id": "tests/test_data.py::test_every_row_has_url_and_access_date",
+    "name": "test_every_row_has_url_and_access_date",
+    "file": "test_data.py",
+    "phase": "P2",
+    "doc": "Every source row has an http(s) URL and a YYYY-MM-DD access date.",
+    "outcome": "passed",
+    "duration_s": 0.0007,
+    "message": ""
+   },
+   {
+    "id": "tests/test_data.py::test_level_values_valid",
+    "name": "test_level_values_valid",
+    "file": "test_data.py",
+    "phase": "P2",
+    "doc": "Source level is one of department / college / university.",
+    "outcome": "passed",
+    "duration_s": 0.0004,
+    "message": ""
+   },
+   {
+    "id": "tests/test_data.py::test_raw_excerpt_exists_for_every_row",
+    "name": "test_raw_excerpt_exists_for_every_row",
+    "file": "test_data.py",
+    "phase": "P2",
+    "doc": "Every source has a non-empty raw excerpt file with at least 2 excerpt lines.",
+    "outcome": "passed",
+    "duration_s": 0.0051,
+    "message": ""
+   },
+   {
+    "id": "tests/test_data.py::test_raw_header_url_matches_csv",
+    "name": "test_raw_header_url_matches_csv",
+    "file": "test_data.py",
+    "phase": "P2",
+    "doc": "The URL inside each raw file matches the CSV row (no mixed-up files).",
+    "outcome": "passed",
+    "duration_s": 0.0045,
+    "message": ""
+   },
+   {
+    "id": "tests/test_data.py::test_no_orphan_raw_files",
+    "name": "test_no_orphan_raw_files",
+    "file": "test_data.py",
+    "phase": "P2",
+    "doc": "Every raw file belongs to a CSV row (nothing collected and silently dropped).",
+    "outcome": "passed",
+    "duration_s": 0.0007,
+    "message": ""
+   },
+   {
+    "id": "tests/test_data.py::test_us_institutions_only",
+    "name": "test_us_institutions_only",
+    "file": "test_data.py",
+    "phase": "P2",
+    "doc": "Sample is US only (state column is a 2-letter US code).",
+    "outcome": "passed",
+    "duration_s": 0.0005,
+    "message": ""
+   },
+   {
+    "id": "tests/test_site.py::test_all_four_pages_exist",
+    "name": "test_all_four_pages_exist",
+    "file": "test_site.py",
+    "phase": "P4",
+    "doc": "The four required pages exist: findings, validation, timeline, tokens.",
+    "outcome": "passed",
+    "duration_s": 0.0002,
+    "message": ""
+   },
+   {
+    "id": "tests/test_site.py::test_local_references_resolve",
+    "name": "test_local_references_resolve",
+    "file": "test_site.py",
+    "phase": "P4",
+    "doc": "Every local src/href in every page points to a file that exists (no broken links).",
+    "outcome": "passed",
+    "duration_s": 0.0013,
+    "message": ""
+   },
+   {
+    "id": "tests/test_site.py::test_no_external_scripts",
+    "name": "test_no_external_scripts",
+    "file": "test_site.py",
+    "phase": "P4",
+    "doc": "Pages load no third-party scripts, so they work offline and on GitHub Pages.",
+    "outcome": "passed",
+    "duration_s": 0.0009,
+    "message": ""
+   },
+   {
+    "id": "tests/test_site.py::test_every_page_links_every_page",
+    "name": "test_every_page_links_every_page",
+    "file": "test_site.py",
+    "phase": "P4",
+    "doc": "Shared nav lists all four pages.",
+    "outcome": "passed",
+    "duration_s": 0.0003,
+    "message": ""
+   },
+   {
+    "id": "tests/test_site.py::test_data_files_match_json",
+    "name": "test_data_files_match_json",
+    "file": "test_site.py",
+    "phase": "P4",
+    "doc": "Each docs/data/*.js twin holds exactly the same data as its .json file.",
+    "outcome": "passed",
+    "duration_s": 0.0974,
+    "message": ""
+   },
+   {
+    "id": "tests/test_site.py::test_findings_page_has_no_typed_counts",
+    "name": "test_findings_page_has_no_typed_counts",
+    "file": "test_site.py",
+    "phase": "P4",
+    "doc": "Key findings text on index.html is generated from data (no hard-coded 'N of M' numbers).",
+    "outcome": "passed",
+    "duration_s": 0.0005,
+    "message": ""
+   },
+   {
+    "id": "tests/test_site.py::test_readme_links_pages",
+    "name": "test_readme_links_pages",
+    "file": "test_site.py",
+    "phase": "P4",
+    "doc": "README links all four published pages.",
+    "outcome": "passed",
+    "duration_s": 0.0003,
+    "message": ""
+   },
+   {
+    "id": "tests/test_tokens_timeline.py::test_duplicate_message_ids_counted_once",
+    "name": "test_duplicate_message_ids_counted_once",
+    "file": "test_tokens_timeline.py",
+    "phase": "P7",
+    "doc": "One API response logged on several lines (same message id) is counted once, not per line.",
+    "outcome": "passed",
+    "duration_s": 0.0025,
+    "message": ""
+   },
+   {
+    "id": "tests/test_tokens_timeline.py::test_context_is_sum_of_input_kinds",
+    "name": "test_context_is_sum_of_input_kinds",
+    "file": "test_tokens_timeline.py",
+    "phase": "P7",
+    "doc": "Context size = fresh input + cache write + cache read (output excluded).",
+    "outcome": "passed",
+    "duration_s": 0.0021,
+    "message": ""
+   },
+   {
+    "id": "tests/test_tokens_timeline.py::test_compact_and_clear_events_detected",
+    "name": "test_compact_and_clear_events_detected",
+    "file": "test_tokens_timeline.py",
+    "phase": "P7",
+    "doc": "Compaction boundaries and /clear commands in a transcript are reported as events.",
+    "outcome": "passed",
+    "duration_s": 0.0024,
+    "message": ""
+   },
+   {
+    "id": "tests/test_tokens_timeline.py::test_phase_assigned_to_next_log_entry",
+    "name": "test_phase_assigned_to_next_log_entry",
+    "file": "test_tokens_timeline.py",
+    "phase": "P7",
+    "doc": "A call is assigned to the phase of the first PROGRESS entry at or after it.",
+    "outcome": "passed",
+    "duration_s": 0.0001,
+    "message": ""
+   },
+   {
+    "id": "tests/test_tokens_timeline.py::test_clear_estimate_toy_example",
+    "name": "test_clear_estimate_toy_example",
+    "file": "test_tokens_timeline.py",
+    "phase": "P7",
+    "doc": "/clear estimate: within a phase, only context above the phase's first call counts as avoidable.",
+    "outcome": "passed",
+    "duration_s": 0.0001,
+    "message": ""
+   },
+   {
+    "id": "tests/test_tokens_timeline.py::test_tokens_json_phase_totals_add_up",
+    "name": "test_tokens_json_phase_totals_add_up",
+    "file": "test_tokens_timeline.py",
+    "phase": "P7",
+    "doc": "Published token totals equal the sum over phases and the sum over calls.",
+    "outcome": "passed",
+    "duration_s": 0.0649,
+    "message": ""
+   },
+   {
+    "id": "tests/test_tokens_timeline.py::test_progress_lines_all_parse",
+    "name": "test_progress_lines_all_parse",
+    "file": "test_tokens_timeline.py",
+    "phase": "P7",
+    "doc": "Every bullet line in PROGRESS.md matches the log format (nothing malformed or hand-mangled).",
+    "outcome": "passed",
+    "duration_s": 0.0003,
+    "message": ""
+   },
+   {
+    "id": "tests/test_tokens_timeline.py::test_progress_timestamps_in_order",
+    "name": "test_progress_timestamps_in_order",
+    "file": "test_tokens_timeline.py",
+    "phase": "P7",
+    "doc": "PROGRESS.md never goes backwards: each line's write time (its timestamp, or the 'Backfilled at' time for a line that records an earlier event) is in order.",
+    "outcome": "passed",
+    "duration_s": 0.0005,
+    "message": ""
+   },
+   {
+    "id": "tests/test_tokens_timeline.py::test_progress_actors_valid",
+    "name": "test_progress_actors_valid",
+    "file": "test_tokens_timeline.py",
+    "phase": "P7",
+    "doc": "Every log entry names its actor as Human or Claude.",
+    "outcome": "passed",
+    "duration_s": 0.0003,
+    "message": ""
+   },
+   {
+    "id": "tests/test_tokens_timeline.py::test_prompts_all_parsed",
+    "name": "test_prompts_all_parsed",
+    "file": "test_tokens_timeline.py",
+    "phase": "P7",
+    "doc": "Every '## ' entry in PROMPTS.md is parsed with both a human request and a Claude response.",
+    "outcome": "passed",
+    "duration_s": 0.0008,
+    "message": ""
+   }
+  ]
  }
 ]

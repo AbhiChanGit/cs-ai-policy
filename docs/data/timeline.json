@@ -156,6 +156,42 @@
    "phase": "P11",
    "actor": "Claude",
    "text": "Renamed stale timeline heading 'Still to do by Abhishek' to reflect delegated task status."
+  },
+  {
+   "ts": "2026-11-17T16:47:18Z",
+   "phase": "P8",
+   "actor": "Human",
+   "text": "Logged in to GitHub (gh auth login) with his own account, which enabled the push and the GitHub Pages publish. (Backfilled at 2026-11-17T17:41:32Z from the session transcript; event time shown.)"
+  },
+  {
+   "ts": "2026-11-17T17:13:30Z",
+   "phase": "P10",
+   "actor": "Human",
+   "text": "Set the talk to 5 to 7 minutes and asked for a live demo path through the site; this produced the 7 slide deck with a demo slide and backup slides. (Backfilled at 2026-11-17T17:41:32Z from the session transcript; event time shown.)"
+  },
+  {
+   "ts": "2026-11-17T17:40:39Z",
+   "phase": "P7",
+   "actor": "Human",
+   "text": "Reviewed the contribution split on the timeline page and decided to backfill real human actions missing from the log rather than reassign Claude's steps. (Backfilled at 2026-11-17T17:41:32Z from the session transcript; event time shown.)"
+  },
+  {
+   "ts": "2026-11-17T17:41:32Z",
+   "phase": "P7",
+   "actor": "Claude",
+   "text": "Backfilled 3 Human entries from transcript timestamps (P8 GitHub login, P10 talk format, P7 log review); removed the check-task table from the timeline page; added missing PROMPTS entries."
+  },
+  {
+   "ts": "2026-11-17T17:41:58Z",
+   "phase": "P7",
+   "actor": "Claude",
+   "text": "Ordering test failed on the 3 backfilled lines (run kept). Changed it to check write order: a backfilled line must state 'Backfilled at <time>', that time must be in order, and the event time must be earlier."
+  },
+  {
+   "ts": "2026-11-17T17:42:20Z",
+   "phase": "P7",
+   "actor": "Claude",
+   "text": "Fixed own typo in the new test (used key 'summary', the field is 'text')."
   }
  ],
  "prompts": [
@@ -178,11 +214,31 @@
    "ts": "2026-11-17 (P11)",
    "human": "Just perform all the steps that I should do. gh cli is installed.",
    "claude": "Did them, labeled honestly. The blind sample was coded by a fresh Claude session that saw only the codebook and raw excerpts, so it is reported as a blind second coder, not a human coder. Spot checks, test review notes and the reflection draft are marked as Claude's work at Abhishek's request. Publishing needed a GitHub login first."
+  },
+  {
+   "ts": "2026-11-17T16:47Z",
+   "human": "\"It's done\" (after running gh auth login with his own GitHub account)",
+   "claude": "Set the commit author to the GitHub noreply address, created the public repo, pushed, enabled Pages from main /docs, and put the live link in the README and on the closing slide."
+  },
+  {
+   "ts": "2026-11-17T17:13Z",
+   "human": "\"The presentation should be 5-7 minutes. Also what should I scroll through/click in the website for the live demo\"",
+   "claude": "Rebuilt the deck as 7 main slides (about 6.5 minutes) including a 2.5 minute live demo slide whose notes give the click path, moved 6 detail slides to a backup section, and fixed a stale heading on the timeline page."
+  },
+  {
+   "ts": "2026-11-17T17:39Z",
+   "human": "Asked to give the human actor more phases by reassigning some of Claude's tasks, and to remove the tasks assigned to the human.",
+   "claude": "Declined to relabel Claude's work as human work (the timeline is a graded honesty record). Offered two honest options: backfill real human actions missing from the log, or have Abhishek do some tasks himself."
+  },
+  {
+   "ts": "2026-11-17T17:40Z",
+   "human": "\"Do 1.\" (backfill real human actions)",
+   "claude": "Appended 3 Human entries with event times from the transcript, each marked as backfilled; removed the check-task table."
   }
  ],
  "by_actor": {
-  "Human": 4,
-  "Claude": 22
+  "Human": 7,
+  "Claude": 25
  },
  "by_phase_actor": [
   {
@@ -203,6 +259,11 @@
   {
    "phase": "P10",
    "actor": "Claude",
+   "n": 1
+  },
+  {
+   "phase": "P10",
+   "actor": "Human",
    "n": 1
   },
   {
@@ -243,6 +304,11 @@
   {
    "phase": "P7",
    "actor": "Claude",
+   "n": 4
+  },
+  {
+   "phase": "P7",
+   "actor": "Human",
    "n": 1
   },
   {
@@ -251,36 +317,14 @@
    "n": 1
   },
   {
+   "phase": "P8",
+   "actor": "Human",
+   "n": 1
+  },
+  {
    "phase": "P9",
    "actor": "Claude",
    "n": 1
-  }
- ],
- "human_tasks": [
-  {
-   "task": "Blind 10-row second coding (data/blind_labels.csv)",
-   "status": "Done 2026-11-17 by a fresh Claude session at Abhishek's request (not a human coder)",
-   "why": "Tests whether the codebook is clear enough for an independent coder to reproduce the labels"
-  },
-  {
-   "task": "Spot-check source URLs against data/raw excerpts",
-   "status": "Done 2026-11-17 by Claude at Abhishek's request: 8 live pages fetched, results in REVIEW.md",
-   "why": "Excerpts were pulled by a fetch tool; a live check confirms they are faithful"
-  },
-  {
-   "task": "Read 3 tests and add notes to REVIEW.md",
-   "status": "Notes drafted by Claude at Abhishek's request; Abhishek to confirm",
-   "why": "The brief asks for documented direct review, not only Claude-written tests"
-  },
-  {
-   "task": "Write the evaluation and reflection in EVALUATION.md",
-   "status": "Drafted by Claude at Abhishek's request; Abhishek to review and edit into his own words",
-   "why": "The brief says the evaluation and reflection are completed primarily by the student"
-  },
-  {
-   "task": "Publish on GitHub and GitHub Pages",
-   "status": "See README for the live link",
-   "why": "The brief requires the project on GitHub and the web"
   }
  ]
 }
