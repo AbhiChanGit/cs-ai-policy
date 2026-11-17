@@ -1,0 +1,9 @@
+id,stance,disclosure,ai_as_learning_goal,stance_quote
+gt_cs3300,integrated,required,yes,intentionally integrated into this course
+cmu_17313,permitted,not_stated,yes,You may use generative AI for any and all coding tasks in the course.
+rit_swen261,limited,required,no,the only place where you may use GPT or other AI tools is for searching and/or reference
+njit_cs485,integrated,required,yes,students will be expected to use AI models to generate most of the code.
+princeton_cos333,integrated,not_stated,no,you are required to use generative AI
+neu_cs4130,limited,not_stated,yes,we will clearly mark the parts of assignments where you may use an LLM to help write code.
+cornell_cs5150,permitted,required,no,you must clearly disclose any AI-generated content in your report
+tamusa_csci4316,permitted,required,no,is permitted in this course for students who wish to use them.

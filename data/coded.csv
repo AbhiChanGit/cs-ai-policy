@@ -1,0 +1,27 @@
+id,stance,tone,ai_collaboration,disclosure,stance_quote,tone_quote,collab_quote,coder_note
+stonybrook,prohibited_by_default,cautious,no,required,AI may be used in undergraduate classes if and only if the instructor permits it in writing.,designed to protect both instructors and students from potential pitfalls.,,Also needs Undergraduate Program Director approval per fetch summary.
+buffalo,permitted_with_conditions,cautious,no,required,such content must be clearly identified,Generative AI is not a substitute for careful,,Scope is theses and scholarly work; course use not addressed. Weakest fit to RQ1.
+byui,encouraged,positive,yes,required,Explore and use generative AI tools to assist with coding tasks,Treat generative AI as a supplementary learning resource,same collaborative spirit as pair programming,
+acc,permitted_with_conditions,positive,no,required,Instructors may explicitly allow,Students must learn how to use AI effectively and responsibly as part of their workforce preparation.,,Default allows listed uses; instructors can restrict or require.
+pomona,instructor_decides,positive,yes,instructor_sets,students must read the course syllabus carefully,openly allow students to use generative AI tools in their learning,a collaborating lab partner,Four tiers (0 to 3) chosen per course; Fall 2026 pilot.
+bu,encouraged,positive,no,not_stated,Students are encouraged to learn how to use AI tools,to enhance,,Full GAIA policy text not fetched; disclosure rules live there.
+northeastern,permitted_with_conditions,positive,yes,not_stated,In higher-level courses,By the time you graduate,AI will be a colleague,Staged by level: little or no AI in intro courses.
+stanford,permitted_with_conditions,balanced,yes,required,Students may use generative AI tools to practice and prepare for coursework,The purpose of this guidance is not to prohibit the use of Generative AI,If the use of a human tutor is permitted,Default allows learning support but not deliverables; instructors can override.
+uw,instructor_decides,balanced,yes,instructor_sets,Since there is no single university-wide UW AI policy,Generative AI tools can be valuable aids for learning when used thoughtfully,UW Copilot as your research partner,Partner phrase appears in a sample statement.
+brown,instructor_decides,balanced,no,not_stated,the faculty have full agency to establish their policy,We cannot sit and wait for this to happen to us.,,
+cornell,prohibited_by_default,balanced,yes,instructor_sets,only allowed when expressly permitted by the faculty member,The most obvious risk is that GAI tools can be used to circumvent learning,as a tutor or helper in programming,Three tiers: prohibit / attribute / encourage.
+cmu,instructor_decides,balanced,no,instructor_sets,allow instructors to define what is,Students will not automatically make dishonest choices,,
+mit,instructor_decides,balanced,no,not_stated,there are no Institute-wide requirements,The committee emphasizes how important it is that our students feel sure,,
+gatech,permitted_with_conditions,positive,yes,required,policies aren't intended to stop students from using AI,Students need to learn how to use AI effectively,the same way we treat collaboration with other people,Source is one College of Computing program policy (OMSCS) reported by the college.
+purdue,instructor_decides,balanced,no,not_stated,These guidelines encouraged instructors to clarify their stance,AI solutions have potential to increase productivity,,
+uc,instructor_decides,positive,yes,not_stated,Faculty members can provide clear guidance,This information is not intended as a list of restrictions,AI is a powerful partner.,Our own university.
+osu,prohibited_by_default,balanced,no,not_stated,only with the explicit permission of each instructor,Generative AI can enhance learning,,University also runs an AI Fluency initiative (not in this excerpt).
+utaustin,instructor_decides,cautious,no,not_stated,Faculty and instructors at UT have the ability to determine,involving humans in the loop,,
+princeton,instructor_decides,balanced,no,not_stated,explicit about their AI/ChatGPT policies in course syllabi,We can’t ignore these tools,,AI tutor mentioned only as forbidden; coded no per codebook.
+ucsd,encouraged,positive,no,not_stated,teaching students how to program with large language models,Industry,,News story about CSE practice and a teaching consortium; not a formal policy.
+dartmouth,prohibited_by_default,positive,no,required,disallowed by default in courses,powerful tools for learning,,
+berkeley,instructor_decides,balanced,no,not_stated,authority over courses and curriculum,significant new challenges and opportunities,,
+uiuc,instructor_decides,cautious,no,instructor_sets,varies from course to course,AI programs are not a replacement for critical thinking,,Page offers restricted and permitted templates.
+oregonstate,prohibited_by_default,balanced,no,required,when course policies explicitly permit it,AI tools have become a part of how work is being done,,
+harvard,instructor_decides,balanced,no,instructor_sets,All faculty are required to inform students of the policies governing generative AI use in class.,Harvard supports responsible experimentation with generative AI tools,,Samples range from forbid to encourage.
+vt,instructor_decides,balanced,no,not_stated,vary from course to course,TLOS recommends a measured approach.,,

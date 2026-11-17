@@ -1,0 +1,16 @@
+INSTITUTION: Dartmouth College
+SOURCE: Guidelines on using Generative Artificial Intelligence (GenAI) for Coursework
+URL: https://policies.dartmouth.edu/node/2571
+LEVEL: university
+SOURCE DATE: 2024-07-01 (rev. 2025-09-02)
+ACCESSED: 2026-11-17
+RETRIEVAL: Claude Code WebFetch (page to text, key sentences extracted); PDFs via pypdf.
+
+EXCERPTS:
+- Students may not use GenAI tools for submitted coursework unless expressly permitted.
+- As such, instructors have authority to determine whether AI tools may be used in their course.
+- Dartmouth assumes the general rule that GenAI tools are disallowed by default in courses
+- Instructors are encouraged to define AI policies specific to their courses.
+- Use of GenAI tools require acknowledgement for academic integrity.
+- Dartmouth recognizes emergent Generative Artificial Intelligence technologies as powerful tools for learning.
+- Dartmouth encourages and supports faculty in exploring innovative learning methods

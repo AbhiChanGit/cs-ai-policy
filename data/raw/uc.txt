@@ -1,0 +1,15 @@
+INSTITUTION: University of Cincinnati
+SOURCE: Guidelines on AI use (AI at University of Cincinnati)
+URL: https://ai.uc.edu/about/ai-guidelines
+LEVEL: university
+SOURCE DATE: not shown
+ACCESSED: 2026-11-17
+RETRIEVAL: Claude Code WebFetch (page to text, key sentences extracted); PDFs via pypdf.
+
+EXCERPTS:
+- Communicate with your instructors about the acceptability and appropriate use of AI
+- Faculty members can provide clear guidance about how these tools may or may not fit into their learning objectives
+- The responsible use of technology, including AI technology, should align with the UC Student Code of Conduct
+- AI is a powerful partner.
+- This information is not intended as a list of restrictions, but as a compass
+- We champion academic integrity, discovery, and human-centered responsibility as AI evolves.

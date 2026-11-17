@@ -1,0 +1,14 @@
+INSTITUTION: New Jersey Institute of Technology
+COURSE: CS 485 AI-Assisted Software Engineering
+TERM: Spring 2026
+URL: https://kelloggm.github.io/martinjkellogg.com/teaching/cs485-sp26/about
+LEVEL: course
+ACCESSED: 2026-11-17
+RETRIEVAL: Claude Code WebFetch (page to text, key sentences extracted); PDFs via pypdf.
+
+EXCERPTS:
+- The project will involve using LLMs as part of every step of the engineering process
+- Instead, students will be expected to use AI models to generate most of the code.
+- I expect students will need at least one of Claude Code, Cursor, OpenAI Codex, etc.
+- you will be required to submit the logs of all of your interactions with your AI tools.
+- These essays must be completed without the assistance of AI tools.

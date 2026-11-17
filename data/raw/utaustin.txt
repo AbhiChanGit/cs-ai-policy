@@ -1,0 +1,15 @@
+INSTITUTION: University of Texas at Austin
+SOURCE: Generative AI in Teaching and Learning: Policies
+URL: https://fisd.utexas.edu/generative-ai-teaching-and-learning-policies
+LEVEL: university
+SOURCE DATE: 2023-11
+ACCESSED: 2026-11-17
+RETRIEVAL: Claude Code WebFetch (page to text, key sentences extracted); PDFs via pypdf.
+
+EXCERPTS:
+- Faculty and instructors at UT have the ability to determine what ‘completion’ of student academic work entails
+- may be considered a case of academic dishonesty by the university
+- It is strongly recommended that you outline any individual expectations for assignments completion
+- ChatGPT or similar AI Tools must not be used to generate output that would be considered non-public.
+- Generative AI tools cannot be used to directly assess the quality of student work
+- involving humans in the loop to ensure that educational values and principles are prioritized

@@ -1,0 +1,14 @@
+INSTITUTION: Brown University
+SOURCE: Q&A: How Brown University is navigating the rise of generative AI use in the classroom
+URL: https://www.brown.edu/news/2026-08-20/brown-ai-teaching-learning
+LEVEL: university
+SOURCE DATE: 2026-08-20
+ACCESSED: 2026-11-17
+RETRIEVAL: Claude Code WebFetch (page to text, key sentences extracted); PDFs via pypdf.
+
+EXCERPTS:
+- If I could add one thing that we want to underscore, it is that the faculty have full agency to establish their policy.
+- The key is developing markers or indicators that make expectations surrounding AI clear to everyone up front.
+- Some examples show how to make it very clear that AI is not appropriate at all for this class.
+- We cannot sit and wait for this to happen to us.
+- proceed thoughtfully and prudently

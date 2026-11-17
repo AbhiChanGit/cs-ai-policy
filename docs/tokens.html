@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Token Usage</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<main>
+  <h1>Token usage</h1>
+  <p class="lede">Parsed by <code>src/tokens.py</code> from Claude Code's own transcript files (<code>~/.claude/projects/…/*.jsonl</code>), one record per API call, de-duplicated by message id. Calls are assigned to the phase of the next PROGRESS.md entry.</p>
+  <div class="tiles" id="tiles"></div>
+
+  <div class="callout"><b>How to read this.</b> Every call re-sends the whole conversation. Most of it comes from the prompt cache (<i>cache read</i>), which is cheap but still counts toward plan limits. So the cost of a step depends less on the step and more on <b>how long the conversation already is</b>. That is exactly what <code>/clear</code> (start fresh, rely on SPEC.md) and <code>/compact</code> (summarize history) attack.</div>
+
+  <h2>Context size per call</h2>
+  <div class="card"><div id="ctx"></div><p class="note">Context = input + cache write + cache read for one call. Vertical lines mark phase changes. A /clear would drop the line back to the baseline at each phase.</p></div>
+
+  <h2>Tokens by phase</h2>
+  <div class="card"><div class="legend" id="leg"></div><div id="phase"></div>
+    <p class="note">Bars are stacked; hover a bar for exact numbers.</p></div>
+  <div class="tablewrap" style="margin-top:14px" id="ptable"></div>
+
+  <h2>Practices: what /clear and /compact would change</h2>
+  <div class="grid">
+    <div class="card"><h3>Estimate for this project</h3><div id="est"></div></div>
+    <div class="card"><h3>Observed in this project</h3><div id="events"></div></div>
+  </div>
+
+  <h2>Sessions compared</h2>
+  <div class="tablewrap" id="sess"></div>
+  <footer>Rebuild: <code>python src/tokens.py</code>. Phase names: P0 kickoff, P1 setup, P2 data collection, P3 analysis, P5 validation and page code, P10+ after the last log line.</footer>
+</main>
+<script src="assets/common.js"></script>
+<script src="data/tokens.js"></script>
+<script>
+nav("tokens.html");
+const D = window.DATA_TOKENS, S = D.sessions.find((s) => s.main), t = S.totals;
+const KINDS = [["cache_read", "cache read", "var(--s1)"], ["cache_write", "cache write", "var(--s2)"], ["output", "output", "var(--s3)"], ["input", "fresh input", "var(--s4)"]];
+const M = (n) => (n >= 1e6 ? (n / 1e6).toFixed(2) + "M" : n >= 1e3 ? Math.round(n / 1e3) + "k" : String(n));
+document.getElementById("tiles").innerHTML = [
+  [M(t.all), "total tokens (all kinds)"], [Math.round((t.cache_read / t.all) * 100) + "%", "of that is cache read"],
+  [M(t.output), "output tokens"], [t.calls, "API calls"], [M(t.peak_context), "peak context"],
+  [M(S.clear_estimate_saved_cache_read), "cache read avoidable with /clear (est.)"],
+].map(([v, l]) => `<div class="tile"><div class="v">${v}</div><div class="l">${l}</div></div>`).join("");
+
+// Context line (SVG, single series)
+(function () {
+  const el = document.getElementById("ctx"), calls = S.calls, W = 900, H = 240, pl = 48, pr = 10, pt = 10, pb = 28;
+  const maxY = Math.max(...calls.map((c) => c.context));
+  const x = (i) => pl + (i / Math.max(1, calls.length - 1)) * (W - pl - pr), y = (v) => pt + (1 - v / maxY) * (H - pt - pb);
+  let s = `<svg viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="Context size per call">`;
+  for (let k = 0; k <= 4; k++) { const v = (maxY * k) / 4; s += `<line x1="${pl}" x2="${W - pr}" y1="${y(v)}" y2="${y(v)}" stroke="var(--border)"/><text x="${pl - 6}" y="${y(v) + 4}" text-anchor="end">${M(v)}</text>`; }
+  calls.forEach((c, i) => { if (i && c.phase !== calls[i - 1].phase) s += `<line x1="${x(i)}" x2="${x(i)}" y1="${pt}" y2="${H - pb}" stroke="var(--muted)" stroke-dasharray="3 3"/><text x="${x(i) + 3}" y="${pt + 10}">${c.phase}</text>`; });
+  s += `<polyline fill="none" stroke="var(--s1)" stroke-width="2" points="${calls.map((c, i) => `${x(i)},${y(c.context)}`).join(" ")}"/>`;
+  calls.forEach((c, i) => { s += `<circle cx="${x(i)}" cy="${y(c.context)}" r="9" fill="transparent" data-i="${i}"/>`; });
+  s += `<text x="${pl}" y="${H - 8}">call 1</text><text x="${W - pr}" y="${H - 8}" text-anchor="end">call ${calls.length}</text></svg>`;
+  el.innerHTML = s;
+  el.querySelectorAll("circle").forEach((n) => { const c = calls[n.dataset.i]; hoverable(n, `<b>Call ${+n.dataset.i + 1}</b> (${c.phase})<br>${c.ts.replace("T", " ").slice(0, 19)}<br>context ${fmt(c.context)}<br>output ${fmt(c.output)}`); });
+})();
+
+// Stacked bars by phase
+document.getElementById("leg").innerHTML = KINDS.map(([, l, c]) => `<span><i style="background:${c}"></i>${l}</span>`).join("");
+(function () {
+  const el = document.getElementById("phase"), max = Math.max(...S.by_phase.map((p) => p.all));
+  el.className = "bars";
+  for (const p of S.by_phase) {
+    const row = document.createElement("div");
+    row.className = "bar"; row.style.gridTemplateColumns = "minmax(110px,30%) 1fr 64px";
+    row.innerHTML = `<span class="lab">${p.phase} ${esc(D.phase_names[p.phase] || "")}</span><span class="track" style="display:flex;gap:2px">${
+      KINDS.map(([k, , c], i) => p[k] ? `<span class="fill" style="width:${(p[k] / max) * 100}%;background:${c};border-radius:${i === 3 ? "0 4px 4px 0" : 0}"></span>` : "").join("")}</span><span class="num">${M(p.all)}</span>`;
+    hoverable(row, `<b>${p.phase}</b>, ${p.calls} calls<br>` + KINDS.map(([k, l]) => `${l}: ${fmt(p[k])}`).join("<br>"));
+    el.appendChild(row);
+  }
+})();
+table(document.getElementById("ptable"), [
+  { key: "phase", label: "Phase", render: (r) => `${r.phase} ${esc(D.phase_names[r.phase] || "")}` },
+  { key: "calls", label: "Calls" },
+  { key: "cache_read", label: "Cache read", render: (r) => fmt(r.cache_read) },
+  { key: "cache_write", label: "Cache write", render: (r) => fmt(r.cache_write) },
+  { key: "output", label: "Output", render: (r) => fmt(r.output) },
+  { key: "all", label: "All", render: (r) => fmt(r.all) },
+  { key: "peak_context", label: "Peak context", render: (r) => fmt(r.peak_context) },
+], S.by_phase);
+
+const saved = S.clear_estimate_saved_cache_read;
+document.getElementById("est").innerHTML = `<p>If the session had been cleared at each phase change, about <b>${fmt(saved)}</b> cache-read tokens (${Math.round((saved / t.cache_read) * 100)}% of all cache reads) would not have been re-sent.</p>
+<p class="note">Model: after a /clear, each call's context restarts at the size of the first call in that phase; everything above is history a /clear drops. It overstates savings a little, because a fresh session must re-read SPEC.md and the files it needs.</p>`;
+const ev = S.events.filter((e) => ["compact", "clear"].includes(e.kind));
+document.getElementById("events").innerHTML = ev.length
+  ? `<ul>${ev.map((e) => `<li>${e.kind} at ${esc(e.ts)}</li>`).join("")}</ul>`
+  : `<p>No /clear or /compact happened: the whole build ran in one continuous session. That is why context grows across phases in the chart above.</p><p class="note">Lesson for next time: end each phase with "update PROGRESS, tick SPEC, prepare to clear", then /clear. SPEC.md and CLAUDE.md were written so that this is safe.</p>`;
+
+table(document.getElementById("sess"), [
+  { key: "label", label: "Session" }, { key: "calls", label: "Calls", render: (r) => r.totals.calls },
+  { key: "all", label: "All tokens", render: (r) => fmt(r.totals.all) }, { key: "output", label: "Output", render: (r) => fmt(r.totals.output) },
+  { key: "peak", label: "Peak context", render: (r) => fmt(r.totals.peak_context) },
+  { key: "per", label: "Tokens per call", render: (r) => fmt(Math.round(r.totals.all / r.totals.calls)) },
+], D.sessions);
+</script>
+</body>
+</html>

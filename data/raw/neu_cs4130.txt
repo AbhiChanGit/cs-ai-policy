@@ -1,0 +1,13 @@
+INSTITUTION: Northeastern University
+COURSE: CS 4130 Engineering LLM-Integrated Systems
+TERM: Fall 2025
+URL: http://pages.github.khoury.northeastern.edu/4130/2025F/policies/
+LEVEL: course
+ACCESSED: 2026-11-17
+RETRIEVAL: Claude Code WebFetch (page to text, key sentences extracted); PDFs via pypdf.
+
+EXCERPTS:
+- But, you’re not going to be able to develop that skill if you use an LLM to do all your coding for you.
+- However, we also want you to effectively learn how to use LLMs to write code, which is a skill that you will need.
+- To resolve this tension, we will clearly mark the parts of assignments where you may use an LLM to help write code.
+- You should turn off Copilot, etc. for the other parts.

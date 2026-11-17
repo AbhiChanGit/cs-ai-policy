@@ -1,0 +1,13 @@
+INSTITUTION: Princeton University
+SOURCE: As Generative AI Advances, Princeton Tries to Keep Policies Updated (Princeton Alumni Weekly)
+URL: https://paw.princeton.edu/article/generative-ai-advances-princeton-tries-keep-policies-updated
+LEVEL: university
+SOURCE DATE: 2024-01-24
+ACCESSED: 2026-11-17
+RETRIEVAL: Claude Code WebFetch (page to text, key sentences extracted); PDFs via pypdf.
+
+EXCERPTS:
+- Princeton’s policies have remained the same as before the introduction of generative AI
+- explicit about their AI/ChatGPT policies in course syllabi
+- students cannot use outside tutors, whether that tutor is an AI bot or not.
+- We can’t ignore these tools, and I think that’s become that much more evident even in the last six months,

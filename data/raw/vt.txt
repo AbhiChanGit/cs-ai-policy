@@ -1,0 +1,16 @@
+INSTITUTION: Virginia Tech
+SOURCE: Considering Generative AI at Virginia Tech (TLOS)
+URL: https://tlos.vt.edu/resources/generative-ai.html
+LEVEL: university
+SOURCE DATE: 2026-08-17
+ACCESSED: 2026-11-17
+RETRIEVAL: Claude Code WebFetch (page to text, key sentences extracted); PDFs via pypdf.
+
+EXCERPTS:
+- Appropriate and inappropriate uses of generative AI vary from course to course.
+- GHS decisions about any potential violation will be based on what guidance faculty provided.
+- Regularly update your syllabus and other course documentation to directly address generative AI
+- they will never be 100% accurate.
+- refrain from using AI detection software to check students’ assignments/exams.
+- TLOS recommends a measured approach.
+- Students can leverage generative AI to explore new concepts, reinforce what they are learning in the classroom

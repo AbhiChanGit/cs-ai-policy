@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CS GenAI Policies</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<main>
+  <h1>How US computer science programs talk about generative AI</h1>
+  <p class="lede">Official AI statements from <span id="nInst"></span> US institutions and <span id="nSe"></span> software engineering course syllabi, coded against a fixed codebook. Every number on this page is computed by <code>src/analyze.py</code> from <code>data/coded.csv</code>; every label links to the sentence that justified it.</p>
+
+  <div class="tiles" id="tiles"></div>
+
+  <h2>Key findings</h2>
+  <div class="card"><ul id="findings" style="margin:0;padding-left:20px"></ul></div>
+
+  <h2>RQ1. What may students do by default?</h2>
+  <div class="grid">
+    <div class="card"><h3>Default stance on student use</h3><div id="cStance"></div></div>
+    <div class="card"><h3>Is disclosure required?</h3><div id="cDisc"></div></div>
+  </div>
+  <div class="card" style="margin-top:14px"><h3>Stance by who wrote the statement</h3>
+    <div class="grid" id="cLevel"></div></div>
+
+  <h2>RQ2 and RQ3. Tone, and AI as a collaborator</h2>
+  <div class="grid">
+    <div class="card"><h3>Tone toward AI</h3><div id="cTone"></div></div>
+    <div class="card"><h3>Frames AI as partner, tutor, colleague or pair programmer</h3><div id="cCollab"></div><div id="collabQuotes" class="note" style="margin-top:10px"></div></div>
+  </div>
+
+  <h2>RQ4. Software engineering courses</h2>
+  <div class="grid">
+    <div class="card"><h3>AI policy in SE course syllabi</h3><div id="cSe"></div>
+      <p class="note">limited = reference only or marked parts only; integrated = required or taught as a skill.</p></div>
+    <div class="card"><h3>Learning to use AI named as a course goal</h3><div id="cGoal"></div></div>
+  </div>
+  <div class="tablewrap" style="margin-top:14px" id="tSe"></div>
+
+  <h2>All sources</h2>
+  <div class="controls">
+    <input type="search" id="q" placeholder="Search institution or quote…" aria-label="Search sources">
+    <select id="fStance" aria-label="Filter by stance"><option value="">Any stance</option></select>
+    <select id="fTone" aria-label="Filter by tone"><option value="">Any tone</option></select>
+    <select id="fLevel" aria-label="Filter by level"><option value="">Any level</option></select>
+  </div>
+  <p class="note" id="count"></p>
+  <div class="tablewrap" id="tSrc"></div>
+
+  <h2>Method and validity</h2>
+  <div class="grid">
+    <div class="card"><h3>Approach</h3>
+      <p>Qualitative content analysis. One official source per institution (department page first, then college, then university), saved as excerpts with URL and access date. Claude coded each source with the codebook and quoted the sentence behind each label. Tests confirm every quote exists in the saved text.</p>
+      <p class="note">Codebook: <code>data/codebook.md</code>. Raw excerpts: <code>data/raw/</code>.</p></div>
+    <div class="card"><h3>Agreement checks</h3><div id="validity"></div></div>
+    <div class="card"><h3>Limitations</h3><ul style="margin:0;padding-left:18px">
+      <li>Convenience sample, weighted to research universities; not representative of all US programs.</li>
+      <li>Sources mix formal policy, guidance pages and news stories; dates range 2023 to 2026.</li>
+      <li>Excerpts were extracted by a fetch tool; a human spot check of 5 URLs is listed as a pending task.</li>
+      <li>One coder (Claude). The keyword rule was written after reading the texts, so it is a consistency check, not an independent coder.</li>
+    </ul></div>
+  </div>
+  <footer>Data accessed 2026-11-17. Built agentically with Claude Code; see the Validation, Timeline and Tokens pages.</footer>
+</main>
+<script src="assets/common.js"></script>
+<script src="data/findings.js"></script>
+<script>
+nav("index.html");
+const F = window.DATA_FINDINGS, N = F.n_institutions;
+const get = (arr, l) => (arr.find((d) => d.label === l) || { n: 0 }).n;
+const pct = (n, d = N) => Math.round((n / d) * 100) + "%";
+document.getElementById("nInst").textContent = N;
+document.getElementById("nSe").textContent = F.n_se_courses;
+
+const instr = get(F.stance, "instructor_decides"), collabYes = get(F.collaboration, "yes");
+const seInt = get(F.se_stance, "integrated"), seProh = get(F.se_stance, "prohibited");
+const kv = F.validity.keyword_vs_claude;
+document.getElementById("tiles").innerHTML = [
+  [N, "institutions coded"],
+  [pct(instr), "leave the decision to each instructor"],
+  [pct(collabYes), "frame AI as a collaborator"],
+  [`${seInt} of ${F.n_se_courses}`, "SE courses integrate or require AI"],
+  [kv.kappa.toFixed(2), "kappa, keyword rule vs Claude"],
+].map(([v, l]) => `<div class="tile"><div class="v">${v}</div><div class="l">${l}</div></div>`).join("");
+
+const lv = F.stance_by_level, inst = F.institutions;
+const deptN = inst.filter((r) => r.level === "department").length, uniN = inst.filter((r) => r.level === "university").length;
+const encDept = get(lv.department, "encouraged"), encAll = get(F.stance, "encouraged");
+const instrUni = get(lv.university, "instructor_decides");
+const pos = get(F.tone, "positive"), cau = get(F.tone, "cautious");
+const posDept = inst.filter((r) => r.level === "department" && r.tone === "positive").length;
+const posUni = inst.filter((r) => r.level === "university" && r.tone === "positive").length;
+const discReq = get(F.disclosure, "required"), discNo = get(F.disclosure, "not_stated");
+document.getElementById("findings").innerHTML = [
+  `<b>Instructor discretion is the norm.</b> ${instr} of ${N} sources (${pct(instr)}) set no default and hand the decision to each instructor. At the university level this is ${instrUni} of ${uniN}.`,
+  `<b>Departments take positions; universities defer.</b> ${encDept === encAll ? "All " + encAll : encDept + " of " + encAll} sources that encourage student use are department pages (${encDept} of ${deptN} department sources). ${get(lv.university, "encouraged") === 0 ? "No" : get(lv.university, "encouraged")} university-level source${get(lv.university, "encouraged") === 1 ? "" : "s"} in the sample encourage${get(lv.university, "encouraged") === 1 ? "s" : ""} use.`,
+  `<b>Tone is mostly balanced, rarely negative.</b> ${pos} sources are positive, ${get(F.tone, "balanced")} balanced and ${cau} cautious. Positive tone: departments ${posDept} of ${deptN} (${pct(posDept, deptN)}), universities ${posUni} of ${uniN} (${pct(posUni, uniN)}).`,
+  `<b>Collaboration language is a minority view.</b> ${collabYes} of ${N} sources describe AI as a partner, tutor, colleague or pair programmer; the rest call it a tool or a risk.`,
+  `<b>Disclosure is not universal.</b> ${discReq} sources require students to disclose AI use; ${discNo} do not mention disclosure at all.`,
+  `<b>SE courses are ahead of policy.</b> ${seProh} of ${F.n_se_courses} SE syllabi ban AI outright; ${seInt} integrate or require it, and ${get(F.se_learning_goal, "yes")} name learning to use AI well as a course goal.`,
+].map((s) => `<li style="margin:4px 0">${s}</li>`).join("");
+
+barList(document.getElementById("cStance"), F.stance, N);
+barList(document.getElementById("cDisc"), F.disclosure, N);
+barList(document.getElementById("cTone"), F.tone, N);
+barList(document.getElementById("cCollab"), F.collaboration, N);
+barList(document.getElementById("cSe"), F.se_stance, F.n_se_courses);
+barList(document.getElementById("cGoal"), F.se_learning_goal, F.n_se_courses);
+const lvEl = document.getElementById("cLevel");
+for (const level of ["department", "college", "university"]) {
+  const box = document.createElement("div");
+  const n = inst.filter((r) => r.level === level).length;
+  box.innerHTML = `<h3 style="font-weight:600">${level} (n=${n})</h3><div></div>`;
+  lvEl.appendChild(box);
+  barList(box.lastElementChild, lv[level], n);
+}
+document.getElementById("collabQuotes").innerHTML = inst.filter((r) => r.ai_collaboration === "yes")
+  .map((r) => `${esc(r.institution)}: <q>${esc(r.collab_quote)}</q>`).join("<br>");
+
+table(document.getElementById("tSe"), [
+  { key: "institution", label: "Institution" },
+  { key: "course", label: "Course" },
+  { key: "term", label: "Term" },
+  { key: "stance", label: "Stance", render: (r) => `<span class="pill">${nice(r.stance)}</span>` },
+  { key: "stance_quote", label: "Evidence", render: (r) => `<q>${esc(r.stance_quote)}</q> <a href="${esc(r.url)}" target="_blank" rel="noopener">source</a>` },
+], F.se_courses);
+
+const v = F.validity, h = v.human_vs_claude;
+document.getElementById("validity").innerHTML =
+  `<p><b>Keyword rule vs Claude (stance):</b> ${kv.agree}/${kv.n} agree, Cohen's kappa ${kv.kappa.toFixed(3)}.</p>
+   <details><summary>${kv.disagreements.length} disagreements</summary><ul>${kv.disagreements.map((d) => `<li>${esc(d.institution)}: Claude <i>${nice(d.claude)}</i>, rule <i>${nice(d.keyword)}</i></li>`).join("")}</ul></details>
+   <p><b>Human blind sample (${h.sample_size} rows):</b> ${h.status === "pending" ? '<span class="pill skip">pending</span> Abhishek fills <code>data/human_labels.csv</code>' :
+     ["stance", "tone", "ai_collaboration"].map((k) => `${nice(k)} ${h[k].agree}/${h[k].n}, kappa ${h[k].kappa == null ? "n/a" : h[k].kappa.toFixed(2)}`).join("; ")}</p>`;
+
+for (const [id, key] of [["fStance", "stance"], ["fTone", "tone"], ["fLevel", "level"]]) {
+  const s = document.getElementById(id);
+  [...new Set(inst.map((r) => r[key]))].sort().forEach((x) => s.insertAdjacentHTML("beforeend", `<option value="${x}">${nice(x)}</option>`));
+  s.addEventListener("change", drawSrc);
+}
+document.getElementById("q").addEventListener("input", drawSrc);
+function drawSrc() {
+  const q = document.getElementById("q").value.toLowerCase();
+  const fs = document.getElementById("fStance").value, ft = document.getElementById("fTone").value, fl = document.getElementById("fLevel").value;
+  const rows = inst.filter((r) => (!fs || r.stance === fs) && (!ft || r.tone === ft) && (!fl || r.level === fl) &&
+    (!q || [r.institution, r.stance_quote, r.tone_quote, r.collab_quote, r.coder_note].join(" ").toLowerCase().includes(q)));
+  document.getElementById("count").textContent = `${rows.length} of ${N} sources`;
+  table(document.getElementById("tSrc"), [
+    { key: "institution", label: "Institution", render: (r) => `<b>${esc(r.institution)}</b><br><span class="note">${esc(nice(r.inst_type))}</span>` },
+    { key: "level", label: "Level" },
+    { key: "stance", label: "Stance", render: (r) => `<span class="pill">${nice(r.stance)}</span><br><q>${esc(r.stance_quote)}</q>` },
+    { key: "tone", label: "Tone", render: (r) => `<span class="pill">${r.tone}</span><br><q>${esc(r.tone_quote)}</q>` },
+    { key: "ai_collaboration", label: "Collab." },
+    { key: "disclosure", label: "Disclosure", render: (r) => nice(r.disclosure) },
+    { key: "source_title", label: "Source", render: (r) => `<a href="${esc(r.url.split(" ;")[0])}" target="_blank" rel="noopener">${esc(r.source_title)}</a><br><span class="note">${esc(r.source_date || "date not shown")}</span>${r.coder_note ? `<br><span class="note">Note: ${esc(r.coder_note)}</span>` : ""}` },
+  ], rows);
+}
+drawSrc();
+</script>
+</body>
+</html>

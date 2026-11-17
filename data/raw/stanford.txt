@@ -1,0 +1,16 @@
+INSTITUTION: Stanford University
+SOURCE: Generative AI Policy Guidance (Office of Community Standards)
+URL: https://communitystandards.stanford.edu/generative-ai-policy-guidance
+LEVEL: university
+SOURCE DATE: 2026-10-15
+ACCESSED: 2026-11-17
+RETRIEVAL: Claude Code WebFetch (page to text, key sentences extracted); PDFs via pypdf.
+
+EXCERPTS:
+- Students may use generative AI tools to practice and prepare for coursework, to support learning
+- Students may not use AI tools to create deliverables (e.g., assignments, projects, presentations, essays, reports)
+- Instructors may determine what constitutes permissible and impermissible AI use in their courses and assignments.
+- However, students must document and disclose any other uses of AI related to coursework.
+- The purpose of this guidance is not to prohibit the use of Generative AI, but to provide a framework for its
+- If the use of a human tutor is permitted for a given task, then it is likely that the use of generative AI
+- Students are responsible for understanding each of their course and assignment AI policies.

@@ -1,0 +1,14 @@
+INSTITUTION: Massachusetts Institute of Technology
+SOURCE: AI use policy and resources for instructors (MIT Faculty Governance)
+URL: https://facultygovernance.mit.edu/node/2065
+LEVEL: university
+SOURCE DATE: 2026-08-25
+ACCESSED: 2026-11-17
+RETRIEVAL: Claude Code WebFetch (page to text, key sentences extracted); PDFs via pypdf.
+
+EXCERPTS:
+- For fall 2026, as in previous years, there are no Institute-wide requirements for setting policies on AI use in classes
+- Every class should have a clear and prominently posted policy on the use of generative AI;
+- Instructors use an easily understandable format to communicate what is and is not permitted
+- AI policies should include a rationale.
+- The committee emphasizes how important it is that our students feel sure about when, where, and why AI is prohibited, allowed, or required.

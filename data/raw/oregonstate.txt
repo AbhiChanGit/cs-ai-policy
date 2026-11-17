@@ -1,0 +1,16 @@
+INSTITUTION: Oregon State University
+SOURCE: Guidance on Drafting AI Use Policies (EECS, College of Engineering)
+URL: https://engineering.oregonstate.edu/EECS/MyEECS/EECS-guidance-drafting-ai-use-policies
+LEVEL: department
+SOURCE DATE: 2026-06
+ACCESSED: 2026-11-17
+RETRIEVAL: Claude Code WebFetch (page to text, key sentences extracted); PDFs via pypdf.
+
+EXCERPTS:
+- Students may use AI tools when course policies explicitly permit it.
+- While individual faculty will set course-specific rules, this document provides the common floor and vocabulary.
+- AI use exists on a spectrum from light assistance at one end to full content generation at the other.
+- When you use AI on permitted work, disclose it at the point of submission:
+- A one-line disclosure is sufficient in most cases.
+- AI tools have become a part of how work is being done: in industry, in research, and increasingly in the classroom.
+- GitHub Copilot, VS Code or Cursor assistants, and similar IDE features fall within this policy

@@ -1,0 +1,17 @@
+INSTITUTION: University at Buffalo
+SOURCE: CSE Generative AI Policy
+URL: https://engineering.buffalo.edu/computer-science-engineering/information-for-students/policies/cse-generative-ai-policy.html
+LEVEL: department
+SOURCE DATE: not shown
+ACCESSED: 2026-11-17
+RETRIEVAL: Claude Code WebFetch (page to text, key sentences extracted); PDFs via pypdf.
+
+EXCERPTS:
+- Generative AI tools can help students communicate in an unfamiliar language
+- Generative AI is not a substitute for careful, thoughtful, well-reasoned thought
+- its output can be incorrect, misleading, or otherwise harmful
+- CSE holds the author or authors of a scholarly work to be responsible for its content
+- such content must be clearly identified
+- the use of Generative AI tools in a supporting role; e.g., editing for grammar
+- CSE expects the author or authors of a scholarly work to take ownership of the published material.
+- [Scope note by Claude] The policy covers theses, capstone documents and other scholarly work; it does not set course permission.

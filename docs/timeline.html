@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Project Timeline</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<main>
+  <h1>Timeline and contributions</h1>
+  <p class="lede">Built from <code>PROGRESS.md</code> (one timestamped line per step, appended by <code>src/log.py</code>, never edited) and <code>PROMPTS.md</code> (each human request and Claude's response). It shows honestly who did what.</p>
+  <div class="tiles" id="tiles"></div>
+
+  <h2>Who did what, by phase</h2>
+  <div class="card"><div id="split"></div>
+    <div class="legend"><span><i style="background:var(--s1)"></i>Human entries</span><span><i style="background:var(--s2)"></i>Claude entries</span></div></div>
+
+  <div class="grid" style="margin-top:14px">
+    <div class="card"><h3>Human contribution</h3><ul style="margin:0;padding-left:18px">
+      <li>Chose the course, set the goal, and pasted the brief.</li>
+      <li>Decided to delegate the build to Claude (agentic mode), keeping the professor email as his own task.</li>
+      <li>Owns the remaining human tasks below: blind labels, source spot checks, code review, evaluation and reflection.</li></ul></div>
+    <div class="card"><h3>Claude contribution</h3><ul style="margin:0;padding-left:18px">
+      <li>Refused to fabricate a deck for work that did not exist; proposed the plan.</li>
+      <li>Wrote SPEC, codebook, data collection, labels, analysis, tests and all four pages.</li>
+      <li>Ran a negative control, caught and logged its own bugs.</li></ul></div>
+  </div>
+
+  <h2>Still to do by Abhishek</h2>
+  <div class="tablewrap" id="todo"></div>
+
+  <h2>Progress log</h2>
+  <div class="controls">
+    <input type="search" id="q" placeholder="Search log…" aria-label="Search log">
+    <select id="fActor" aria-label="Filter by actor"><option value="">Everyone</option><option>Human</option><option>Claude</option></select>
+  </div>
+  <div class="tablewrap" id="log"></div>
+
+  <h2>Questions and responses</h2>
+  <div id="prompts"></div>
+</main>
+<script src="assets/common.js"></script>
+<script src="data/timeline.js"></script>
+<script>
+nav("timeline.html");
+const D = window.DATA_TIMELINE, P = D.progress;
+const first = P[0]?.ts, last = P[P.length - 1]?.ts;
+document.getElementById("tiles").innerHTML = [
+  [P.length, "logged steps"], [D.by_actor.Human || 0, "human steps"], [D.by_actor.Claude || 0, "Claude steps"],
+  [D.prompts.length, "human requests"], [first ? first.slice(0, 10) : "", "first entry"], [last ? last.slice(0, 10) : "", "latest entry"],
+].map(([v, l]) => `<div class="tile"><div class="v" style="font-size:22px">${v}</div><div class="l">${l}</div></div>`).join("");
+
+const phases = [...new Set(P.map((e) => e.phase))];
+const sp = document.getElementById("split");
+const maxN = Math.max(...phases.map((p) => P.filter((e) => e.phase === p).length));
+sp.className = "bars";
+for (const p of phases) {
+  const h = P.filter((e) => e.phase === p && e.actor === "Human").length, c = P.filter((e) => e.phase === p && e.actor === "Claude").length;
+  const row = document.createElement("div");
+  row.className = "bar";
+  row.innerHTML = `<span class="lab">${p}</span><span class="track" style="display:flex;gap:2px">${h ? `<span class="fill" style="width:${(h / maxN) * 100}%;border-radius:0"></span>` : ""}<span class="fill" style="width:${(c / maxN) * 100}%;background:var(--s2)"></span></span><span class="num">${h + c}</span>`;
+  hoverable(row, `<b>${p}</b><br>Human ${h}, Claude ${c}`);
+  sp.appendChild(row);
+}
+
+table(document.getElementById("todo"), [{ key: "task", label: "Task" }, { key: "why", label: "Why it matters" }], D.human_tasks);
+
+function drawLog() {
+  const q = document.getElementById("q").value.toLowerCase(), a = document.getElementById("fActor").value;
+  table(document.getElementById("log"), [
+    { key: "ts", label: "Time (UTC)", render: (r) => `<span class="mono">${r.ts.replace("T", " ").replace("Z", "")}</span>` },
+    { key: "phase", label: "Phase" },
+    { key: "actor", label: "Actor", render: (r) => `<span class="pill" style="${r.actor === "Human" ? "border-color:var(--s1)" : "border-color:var(--s2)"}">${r.actor}</span>` },
+    { key: "text", label: "What happened" },
+  ], P.filter((e) => (!a || e.actor === a) && (!q || (e.text + e.phase).toLowerCase().includes(q))));
+}
+["q", "fActor"].forEach((id) => document.getElementById(id).addEventListener("input", drawLog));
+drawLog();
+
+document.getElementById("prompts").innerHTML = D.prompts.map((p) => `<div class="card" style="margin-bottom:10px">
+  <div class="note mono">${esc(p.ts)}</div>
+  <p style="margin:6px 0"><span class="pill" style="border-color:var(--s1)">Human</span> ${esc(p.human)}</p>
+  <p style="margin:6px 0"><span class="pill" style="border-color:var(--s2)">Claude</span> ${esc(p.claude)}</p></div>`).join("");
+</script>
+</body>
+</html>

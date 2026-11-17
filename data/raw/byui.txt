@@ -1,0 +1,15 @@
+INSTITUTION: Brigham Young University-Idaho
+SOURCE: Generative AI Policy (Computer Science and Engineering Department)
+URL: https://byui-cse.github.io/department/student-resources/generative-ai/generative-ai-policy.html
+LEVEL: department
+SOURCE DATE: not shown
+ACCESSED: 2026-11-17
+RETRIEVAL: Claude Code WebFetch (page to text, key sentences extracted); PDFs via pypdf.
+
+EXCERPTS:
+- Explore and use generative AI tools to assist with coding tasks, generate new ideas, and solve complex problems.
+- Approach the use of generative AI tools with the same collaborative spirit as pair programming,
+- Treat generative AI as a supplementary learning resource,
+- Use generative AI tools for code completion, debugging, and optimization to enhance performance and efficiency.
+- A statement indicating that AI was used to aid in its production is required in all works.
+- students should indicate what and where these portions are in the work.

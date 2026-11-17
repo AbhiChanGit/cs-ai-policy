@@ -1,0 +1,16 @@
+INSTITUTION: Purdue University
+SOURCE: Artificial Intelligence Use (VII.A.5) and Provost Innovation Hub article
+URL: https://www.purdue.edu/provost/innovation-hub/professors-integrate-artificial-intelligence-into-academia-at-ai-townhall
+LEVEL: university
+SOURCE DATE: 2025-11-01 (policy VII.A.5); 2024-02-09 (article)
+ACCESSED: 2026-11-17
+RETRIEVAL: Claude Code WebFetch (page to text, key sentences extracted); PDFs via pypdf.
+
+EXCERPTS:
+- Provost guidelines provide guidance for academic and classroom usage.
+- Complete applicable training on appropriate use of AI as required by Purdue IT.
+- AI solutions have potential to increase productivity and allow the University to create new value for the world.
+- However, caution must be used, as information entered into AI tools
+- These guidelines encouraged instructors to clarify their stance on AI usage within their syllabi and throughout the semester.
+- While some instructors have banned using AI altogether, many have embraced and integrated this new technology into their curriculum.
+- [Second source] https://www.purdue.edu/vpec/policies/information-technology/viia5/

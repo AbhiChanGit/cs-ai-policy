@@ -1,0 +1,17 @@
+INSTITUTION: Stony Brook University
+SOURCE: Department of Computer Science Policies for Using Generative AI (GAI) and Large Language Models (LLMs)
+URL: https://www.cs.stonybrook.edu/students/policies-guidelines/ai-usage.html
+LEVEL: department
+SOURCE DATE: 2024-11-25
+ACCESSED: 2026-11-17
+RETRIEVAL: Claude Code WebFetch (page to text, key sentences extracted); PDFs via pypdf.
+
+EXCERPTS:
+- AI use must be attributed (e.g., you must cite your sources and how they were used).
+- AI may not be used as a wholesale substitute for the work expected of students.
+- AI may be used in undergraduate classes if and only if the instructor permits it in writing.
+- AI may be used in graduate classes if and only if the instructor permits it in writing.
+- must publish it on their class website, in syllabi, and/or in assignment documents.
+- AI should have very limited use in theses and dissertations, and then only if it is integral to the work itself.
+- AI may be used for brainstorming ideas, for exam preparation, for finding initial information.
+- designed to protect both instructors and students from potential pitfalls.

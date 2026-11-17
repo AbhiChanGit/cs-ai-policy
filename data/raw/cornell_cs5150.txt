@@ -1,0 +1,11 @@
+INSTITUTION: Cornell University
+COURSE: CS 5150 Software Engineering
+TERM: Spring 2026
+URL: https://www.cs.cornell.edu/courses/CS5150/2026sp/syllabus.html
+LEVEL: course
+ACCESSED: 2026-11-17
+RETRIEVAL: Claude Code WebFetch (page to text, key sentences extracted); PDFs via pypdf.
+
+EXCERPTS:
+- You may use AI tools to assist with coding, but you must clearly disclose any AI-generated content in your report
+- You may not use AI tools for any in-class exams or in-class activities

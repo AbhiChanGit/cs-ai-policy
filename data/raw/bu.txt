@@ -1,0 +1,14 @@
+INSTITUTION: Boston University
+SOURCE: CDS Adopts Generative AI Assistance Policy (Faculty of Computing & Data Sciences)
+URL: https://www.bu.edu/cds-faculty/2023/03/24/cds-adopts-generative-ai-chatgpt-policy
+LEVEL: department
+SOURCE DATE: 2023-03-24
+ACCESSED: 2026-11-17
+RETRIEVAL: Claude Code WebFetch (page to text, key sentences extracted); PDFs via pypdf.
+
+EXCERPTS:
+- Students are encouraged to learn how to use AI tools
+- to enhance, not damage—their developing writing, coding, and communications skills.
+- For educators, the policy creates a baseline to ensure fair grading for both those who do and do not use AI tools.
+- The GAIA policy stresses transparency, fairness, and honoring relevant stakeholders
+- CDS challenges the rest of the university to think through how they can take generative AI seriously

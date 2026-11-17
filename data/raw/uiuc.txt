@@ -1,0 +1,15 @@
+INSTITUTION: University of Illinois Urbana-Champaign
+SOURCE: AI Guidance Sample Statements for Engineering (Grainger College of Engineering)
+URL: https://genai.grainger.illinois.edu/ai-guidance
+LEVEL: college
+SOURCE DATE: not shown
+ACCESSED: 2026-11-17
+RETRIEVAL: Claude Code WebFetch (page to text, key sentences extracted); PDFs via pypdf.
+
+EXCERPTS:
+- Generative AI tools, such as ChatGPT, Co-pilot, and Gemini, are not permitted for any stage or phase of work in this class.
+- The appropriate use of generative AI varies from course to course.
+- document and attribute all AI contributions to your coursework.
+- Failure to abide by these guidelines is a violation of academic integrity.
+- AI programs are not a replacement for critical thinking, analysis, creativity, originality, and problem-solving.
+- AI tools may be used to assist with engineering design as long as proper attribution is provided.

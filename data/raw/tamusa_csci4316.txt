@@ -1,0 +1,12 @@
+INSTITUTION: Texas A&M University-San Antonio
+COURSE: CSCI 4316 Software Engineering I
+TERM: Fall 2026
+URL: https://apps.tamusa.edu/course-information/syllabi/Fall2026/CSCI_4316SyllabusFA26.pdf
+LEVEL: course
+ACCESSED: 2026-11-17
+RETRIEVAL: Claude Code WebFetch (page to text, key sentences extracted); PDFs via pypdf.
+
+EXCERPTS:
+- Use of artificial intelligence (AI) tools, including ChatGPT, is permitted in this course for students who wish to use them.
+- students must cite any AI-generated material that informed their work (this includes in-text citations and/or use of quotations, and in your reference list).
+- Using an AI tool to generate content without proper attribution qualifies as academic dishonesty

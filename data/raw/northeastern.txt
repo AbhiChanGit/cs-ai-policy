@@ -1,0 +1,16 @@
+INSTITUTION: Northeastern University
+SOURCE: Khoury College faculty on when, and when not, to use AI in the classroom
+URL: https://www.khoury.northeastern.edu/khoury-college-faculty-on-when-and-when-not-to-use-ai-in-the-classroom/
+LEVEL: college
+SOURCE DATE: 2025-10-29
+ACCESSED: 2026-11-17
+RETRIEVAL: Claude Code WebFetch (page to text, key sentences extracted); PDFs via pypdf.
+
+EXCERPTS:
+- grasp and master the fundamentals first, then leverage AI to accelerate tasks.
+- Khoury College encourages less — and potentially zero — AI use in introductory courses
+- This approach is because research has shown that unrestricted AI use can hinder learning for beginners.
+- need to struggle and experience firsthand the process of line-by-line coding, testing, and debugging.
+- We will expose you to ways that AI can become a coach so you can become a better developer.
+- By the time you graduate, AI will be a colleague you'd work with just as you'd work with other software developers.
+- In higher-level courses, faculty will incorporate AI in a variety of novel ways.

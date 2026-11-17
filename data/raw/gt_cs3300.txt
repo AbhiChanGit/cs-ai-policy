@@ -1,0 +1,14 @@
+INSTITUTION: Georgia Institute of Technology
+COURSE: CS 3300 Introduction to Software Engineering
+TERM: Fall 2026
+URL: https://syllabus.gatech.edu/sites/default/files/2026-08/3300-fall26.pdf
+LEVEL: course
+ACCESSED: 2026-11-17
+RETRIEVAL: Claude Code WebFetch (page to text, key sentences extracted); PDFs via pypdf.
+
+EXCERPTS:
+- Generative AI tools (e.g., ChatGPT, GitHub Copilot, and agentic coding tools) are intentionally integrated into this course as part of learning modern software engineering practices.
+- The goal is not simply to use AI, but to learn how to critically evaluate, verify, and take responsibility for AI-assisted work.
+- Use of generative AI tools (e.g., ChatGPT, Copilot, or other AI assistants) is not permitted during quizzes.
+- Some assignments will explicitly ask you to report the AI tools, prompts, workflows, agent interactions, revisions, failures, or human interventions involved.
+- Using an AI tool does not transfer responsibility for correctness, quality, security, academic integrity, or understanding to the tool.

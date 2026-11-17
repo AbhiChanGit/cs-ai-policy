@@ -1,0 +1,17 @@
+INSTITUTION: Pomona College
+SOURCE: Computer Science AI Policy Tier System
+URL: https://www.pomona.edu/node/8943
+LEVEL: department
+SOURCE DATE: 2026 (Fall 2026 pilot)
+ACCESSED: 2026-11-17
+RETRIEVAL: Claude Code WebFetch (page to text, key sentences extracted); PDFs via pypdf.
+
+EXCERPTS:
+- This is a program we are piloting in Fall 2026; we plan to revisit it regularly.
+- Courses in this tier do not allow the use of any AI.
+- students must read the course syllabus carefully and discuss allowed uses with their instructor.
+- they should be credited in the same way that you would share authorship.
+- Students can freely use generative AI tools and do not need to credit their use.
+- is considered a violation of our Departmental Academic Honor Policy.
+- openly allow students to use generative AI tools in their learning
+- a collaborating lab partner

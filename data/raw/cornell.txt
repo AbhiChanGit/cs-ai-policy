@@ -1,0 +1,16 @@
+INSTITUTION: Cornell University
+SOURCE: CU Committee Report: Generative Artificial Intelligence for Education and Pedagogy
+URL: https://teaching.cornell.edu/generative-artificial-intelligence/cu-committee-report-generative-artificial-intelligence-education
+LEVEL: university
+SOURCE DATE: 2023
+ACCESSED: 2026-11-17
+RETRIEVAL: Claude Code WebFetch (page to text, key sentences extracted); PDFs via pypdf.
+
+EXCERPTS:
+- instructors can choose to prohibit, to allow with attribution, or to encourage GAI use
+- individual faculty have authority to determine when its use is prohibited, attributed, or encouraged
+- use of GAI on assignments by students is only allowed when expressly permitted by the faculty member
+- While these tools have the opportunity to customize the learning experience
+- The most obvious risk is that GAI tools can be used to circumvent learning
+- We recommend using GAI in advanced courses as a tutor or helper in programming, but not as the sole creator of code.
+- students will rely on GAI and will not learn the skills necessary to generate working, understandable, and updatable code

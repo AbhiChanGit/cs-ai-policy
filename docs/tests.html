@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Validation Explorer</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<main>
+  <h1>Validation explorer</h1>
+  <p class="lede">Every pytest run in this project, exported by <code>src/run_tests.py</code>. Each test's description is its docstring: a plain statement of what it proves. Failing runs are kept, including a deliberate negative control.</p>
+  <div class="tiles" id="tiles"></div>
+
+  <h2>Run history</h2>
+  <div class="card"><div id="hist"></div>
+    <div class="legend"><span><i style="background:var(--good)"></i>passed</span><span><i style="background:var(--bad)"></i>failed</span><span><i style="background:var(--warn)"></i>skipped</span></div>
+    <p class="note">Click a run to load its results into the table.</p></div>
+
+  <h2>Tests in <span id="runLabel"></span></h2>
+  <div class="controls">
+    <input type="search" id="q" placeholder="Search test name or what it checks…" aria-label="Search tests">
+    <select id="fPhase" aria-label="Filter by phase"><option value="">All phases</option></select>
+    <select id="fOut" aria-label="Filter by outcome"><option value="">All outcomes</option><option>passed</option><option>failed</option><option>skipped</option></select>
+  </div>
+  <p class="note" id="count"></p>
+  <div class="tablewrap" id="tbl"></div>
+
+  <h2>Review log</h2>
+  <div class="card" id="review"></div>
+  <footer>Rebuild: <code>python src/run_tests.py "label"</code></footer>
+</main>
+<script src="assets/common.js"></script>
+<script src="data/tests.js"></script>
+<script>
+nav("tests.html");
+const T = window.DATA_TESTS;
+let run = T.latest;
+const phaseName = { P2: "P2 data", P3: "P3 analysis", P4: "P4 dashboard", P5: "P5 validation", P6: "P6 timeline", P7: "P7 tokens", P8: "P8 publish" };
+
+function tiles() {
+  const r = run.results;
+  const phases = new Set(r.map((x) => x.phase));
+  document.getElementById("tiles").innerHTML = [
+    [run.total, "tests in this run"], [run.passed, "passed"], [run.failed, "failed"], [run.skipped, "skipped (pending human input)"],
+    [phases.size, "phases covered"], [T.history.length, "runs recorded"],
+  ].map(([v, l]) => `<div class="tile"><div class="v">${v}</div><div class="l">${l}</div></div>`).join("");
+  document.getElementById("runLabel").textContent = `run: ${run.label} (${run.timestamp})`;
+}
+
+function history() {
+  const el = document.getElementById("hist");
+  const max = Math.max(...T.history.map((h) => h.total));
+  el.innerHTML = "";
+  T.history.forEach((h, i) => {
+    const row = document.createElement("div");
+    row.className = "bar"; row.style.cursor = "pointer"; row.style.gridTemplateColumns = "minmax(110px,38%) 1fr 60px";
+    const w = (n) => (n / max) * 100;
+    row.innerHTML = `<span class="lab">${i + 1}. ${esc(h.label)}</span><span class="track" style="display:flex;gap:2px">
+      <span class="fill" style="width:${w(h.passed)}%;background:var(--good);border-radius:0"></span>
+      ${h.failed ? `<span class="fill" style="width:${w(h.failed)}%;background:var(--bad);border-radius:0"></span>` : ""}
+      ${h.skipped ? `<span class="fill" style="width:${w(h.skipped)}%;background:var(--warn);border-radius:0 4px 4px 0"></span>` : ""}
+    </span><span class="num">${h.passed}/${h.total}</span>`;
+    hoverable(row, `<b>${esc(h.label)}</b><br>${h.timestamp}<br>${h.passed} passed, ${h.failed} failed, ${h.skipped} skipped`);
+    row.addEventListener("click", () => alertFree(i));
+    el.appendChild(row);
+  });
+}
+// Older runs only keep totals in tests.json; the full results of the latest run are shown.
+function alertFree(i) {
+  const h = T.history[i];
+  if (h.timestamp === T.latest.timestamp) { run = T.latest; }
+  else { run = { ...h, results: (T.runs_full && T.runs_full[i]) || [] }; }
+  tiles(); draw();
+}
+
+const phases = [...new Set(T.latest.results.map((r) => r.phase))].sort();
+phases.forEach((p) => document.getElementById("fPhase").insertAdjacentHTML("beforeend", `<option value="${p}">${phaseName[p] || p}</option>`));
+["q", "fPhase", "fOut"].forEach((id) => document.getElementById(id).addEventListener("input", draw));
+
+function draw() {
+  const q = document.getElementById("q").value.toLowerCase(), fp = document.getElementById("fPhase").value, fo = document.getElementById("fOut").value;
+  const rows = run.results.filter((r) => (!fp || r.phase === fp) && (!fo || r.outcome === fo) && (!q || (r.name + " " + r.doc + " " + r.file).toLowerCase().includes(q)));
+  document.getElementById("count").textContent = run.results.length ? `${rows.length} of ${run.results.length} tests` : "Per-test detail is stored for this run in reports/history.json.";
+  const cls = { passed: "pass", failed: "fail", skipped: "skip" };
+  table(document.getElementById("tbl"), [
+    { key: "outcome", label: "Result", render: (r) => `<span class="pill ${cls[r.outcome]}">${r.outcome}</span>` },
+    { key: "phase", label: "Phase", render: (r) => phaseName[r.phase] || r.phase },
+    { key: "doc", label: "What it checks", render: (r) => `${esc(r.doc)}${r.message ? `<details><summary class="note">message</summary><pre class="mono" style="white-space:pre-wrap">${esc(r.message)}</pre></details>` : ""}` },
+    { key: "name", label: "Test", render: (r) => `<span class="mono">${esc(r.file)}::${esc(r.name)}</span>` },
+    { key: "duration_s", label: "Time (s)" },
+  ], rows);
+}
+document.getElementById("review").innerHTML = miniMd(T.review_md || "No review log yet.");
+tiles(); history(); draw();
+</script>
+</body>
+</html>

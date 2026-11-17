@@ -1,0 +1,14 @@
+INSTITUTION: Rochester Institute of Technology
+COURSE: SWEN-261 Intro to Software Engineering
+TERM: Fall (year not stated)
+URL: https://www.se.rit.edu/~swen-261/web/syllabus
+LEVEL: course
+ACCESSED: 2026-11-17
+RETRIEVAL: Claude Code WebFetch (page to text, key sentences extracted); PDFs via pypdf.
+
+EXCERPTS:
+- CAUTIONARY: ChatGPT and other Generative AI tools are not considered to be part of the official toolkit.
+- Unless given instruction for a specific allowed use, the only place where you may use GPT or other AI tools is for searching and/or reference
+- Submit your prompts for GPT (as a separate file) as part of your work
+- In other words, anything you submit must not have been created or modified by any AI means.
+- In short - just don't do it.

@@ -1,0 +1,17 @@
+INSTITUTION: Harvard University
+SOURCE: Generative AI Guidance (FAS Office of Undergraduate Education)
+URL: https://oue.fas.harvard.edu/faculty-resources/generative-ai-guidance
+LEVEL: college
+SOURCE DATE: not shown
+ACCESSED: 2026-11-17
+RETRIEVAL: Claude Code WebFetch (page to text, key sentences extracted); PDFs via pypdf.
+
+EXCERPTS:
+- All faculty are required to inform students of the policies governing generative AI use in class.
+- Once you decide on a policy, make sure you articulate it clearly for your students
+- it is the student’s responsibility to conform to expectations for each course
+- We specifically forbid the use of ChatGPT or any other generative artificial intelligence (AI) tools
+- The default is that such use is disallowed unless otherwise stated.
+- This course encourages students to explore the use of generative artificial intelligence (GAI) tools
+- Any such use must be appropriately acknowledged and cited.
+- Harvard supports responsible experimentation with generative AI tools

@@ -1,0 +1,16 @@
+INSTITUTION: Georgia Institute of Technology
+SOURCE: New Policies Navigate Role of AI Assistants in CS Courses (College of Computing)
+URL: https://cc.gatech.edu/news/new-policies-navigate-role-ai-assistants-cs-courses
+LEVEL: college
+SOURCE DATE: 2023-06-15
+ACCESSED: 2026-11-17
+RETRIEVAL: Claude Code WebFetch (page to text, key sentences extracted); PDFs via pypdf.
+
+EXCERPTS:
+- Joyner says his policies aren't intended to stop students from using AI.
+- We treat AI-based assistance, such as ChatGPT and Copilot, the same way we treat collaboration with other people:
+- you are welcome to talk about your ideas and work with other people
+- However, all work you submit must be your own.
+- You should never include in your assignment anything that was not written directly by you without proper citation
+- Instead, use your interaction with the AI assistant as a learning experience
+- Students need to learn how to use AI effectively because they'll be expected to do so in the real world.

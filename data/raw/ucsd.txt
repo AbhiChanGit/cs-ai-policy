@@ -1,0 +1,13 @@
+INSTITUTION: University of California San Diego
+SOURCE: Transforming Computer Science Education in the Age of AI (UC San Diego Today)
+URL: https://today.ucsd.edu/story/transforming-computer-science-education-in-the-age-of-ai
+LEVEL: department
+SOURCE DATE: 2025-10-28
+ACCESSED: 2026-11-17
+RETRIEVAL: Claude Code WebFetch (page to text, key sentences extracted); PDFs via pypdf.
+
+EXCERPTS:
+- They have transformed the way programmers write software.
+- The consortium offers six turnkey courses that integrate generative AI into the curriculum.
+- UC San Diego has been teaching students how to program with large language models for several years.
+- Industry, meanwhile, now expects new software engineers to be fluent in these tools.

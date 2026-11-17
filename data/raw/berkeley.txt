@@ -1,0 +1,14 @@
+INSTITUTION: University of California, Berkeley
+SOURCE: GenAI Guidance for Instructors (Berkeley Division of the Academic Senate)
+URL: https://academic-senate.berkeley.edu/sites/default/files/genai_guidance_for_instructors_2025.pdf
+LEVEL: university
+SOURCE DATE: 2025-08-13
+ACCESSED: 2026-11-17
+RETRIEVAL: Claude Code WebFetch (page to text, key sentences extracted); PDFs via pypdf.
+
+EXCERPTS:
+- Generative Artificial Intelligence (GenAI) technologies present significant new challenges and opportunities for how we teach, learn, and conduct research.
+- We wish to remind faculty of their authority over courses and curriculum, and to make clear that academic expectations should be established in the course syllabus.
+- we recommend that all faculty include a clear statement on their syllabus about course expectations regarding the use of Google Gemini or any other GenAI tool for course-related work.
+- In the absence of such a statement, students may be more likely to use these technologies inappropriately or fail to utilize them effectively as a learning tool.
+- Use of GenAI on assignments short-circuits the learning process

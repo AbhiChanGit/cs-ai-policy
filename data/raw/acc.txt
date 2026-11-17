@@ -1,0 +1,17 @@
+INSTITUTION: Austin Community College
+SOURCE: Computer Science and Information Technology (CSIT) Generative AI (GAI) Policy
+URL: https://sites.austincc.edu/cs/student-resources/computer-science-and-information-technology-csit-generative-aigai-policy/
+LEVEL: department
+SOURCE DATE: 2026-05
+ACCESSED: 2026-11-17
+RETRIEVAL: Claude Code WebFetch (page to text, key sentences extracted); PDFs via pypdf.
+
+EXCERPTS:
+- AI is a tool to enhance learning, not a substitute for learning.
+- Students must learn how to use AI effectively and responsibly as part of their workforce preparation.
+- Instructors may explicitly allow, restrict, or require AI use in specific assignments.
+- You must disclose any AI tool used in completing your work.
+- Failure to disclose AI use when required constitutes academic dishonesty.
+- Using AI during exams, quizzes, or assessments labeled "No AI Assistance."
+- Drafting code snippets (with modification and verification)
+- Learning through AI explanations

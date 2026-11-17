@@ -1,0 +1,14 @@
+INSTITUTION: Carnegie Mellon University
+COURSE: 17-313 Foundations of Software Engineering
+TERM: Spring 2026 (inferred)
+URL: https://cmu-313.github.io/syllabus
+LEVEL: course
+ACCESSED: 2026-11-17
+RETRIEVAL: Claude Code WebFetch (page to text, key sentences extracted); PDFs via pypdf.
+
+EXCERPTS:
+- You may use generative AI for any and all coding tasks in the course.
+- Our goal for you in this class is that you learn to use AI in a way that helps you become a better software engineer.
+- We Very Strongly Discourage using AI to Generate writing responses, but we encourage its use for editing your writing.
+- It is your responsibility to validate and verify AI-produced content before submitting it for class purposes.
+- However, outsourcing this work to AI completely bypasses the cognitive friction required to actually learn the material.

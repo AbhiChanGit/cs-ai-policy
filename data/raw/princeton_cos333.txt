@@ -1,0 +1,14 @@
+INSTITUTION: Princeton University
+COURSE: COS 333 Advanced Programming Techniques
+TERM: Fall 2026
+URL: https://www.cs.princeton.edu/courses/archive/fall26/cos333/policies.html
+LEVEL: course
+ACCESSED: 2026-11-17
+RETRIEVAL: Claude Code WebFetch (page to text, key sentences extracted); PDFs via pypdf.
+
+EXCERPTS:
+- In particular, you may use generative AI.
+- In fact, you are required to use generative AI, at least to some minimal degree.
+- We recommend using GitHub Copilot running in the VS Code IDE.
+- You may not use ChatGPT or any other generative AI tool when doing the assignments.
+- You must inform the course's instructors about the sources of information that you use.

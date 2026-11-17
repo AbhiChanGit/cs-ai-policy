@@ -1,0 +1,16 @@
+INSTITUTION: University of Washington
+SOURCE: Developing AI-related course policies (Teaching@UW)
+URL: https://teaching.washington.edu/course-design/ai/ai-course-policies/
+LEVEL: university
+SOURCE DATE: not shown
+ACCESSED: 2026-11-17
+RETRIEVAL: Claude Code WebFetch (page to text, key sentences extracted); PDFs via pypdf.
+
+EXCERPTS:
+- Since there is no single university-wide UW AI policy
+- instructors have the right to prohibit the use of AI tools
+- you must briefly (1–2 sentences) identify the tool you used and describe how you used it
+- Failure to disclose AI use will be considered a violation of academic integrity standards.
+- Generative AI tools can be valuable aids for learning when used thoughtfully
+- Remember: AI results can be biased and inaccurate.
+- reviewed with UW Copilot as your research partner

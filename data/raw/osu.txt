@@ -1,0 +1,14 @@
+INSTITUTION: The Ohio State University
+SOURCE: Responsible Use (Artificial Intelligence at Ohio State)
+URL: https://ai.osu.edu/resources-buckeyes/responsible-use
+LEVEL: university
+SOURCE DATE: not shown
+ACCESSED: 2026-11-17
+RETRIEVAL: Claude Code WebFetch (page to text, key sentences extracted); PDFs via pypdf.
+
+EXCERPTS:
+- Students should use GenAI tools for coursework only with the explicit permission of each instructor
+- Would I be comfortable explaining how I used AI in this assignment to my instructor or classmates?
+- Generative AI can enhance learning, creativity, and research—but only when used thoughtfully.
+- Am I using this GenAI tool to support my own learning, or to bypass the learning process?
+- Because we know AI is not always reliable, users should take time to verify results.
