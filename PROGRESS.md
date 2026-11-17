@@ -20,3 +20,5 @@ The first four lines were reconstructed from the Claude Code transcript timestam
 - 2026-11-17T07:45:24Z | P7 | Claude | Built docs/tokens.html: context-per-call line, tokens by phase, /clear estimate, session comparison. Added 17 page/token/timeline tests; a README test failed as expected until README.md was written, then 42 pass.
 - 2026-11-17T07:46:17Z | P4 | Claude | Rendered all 4 pages in headless Chrome and inspected screenshots. Bug found: findings bars were empty (inline span ignores width); fixed with display:block in style.css.
 - 2026-11-17T07:46:17Z | P9 | Claude | Wrote EVALUATION.md Part A (goal-by-goal evidence table and known weaknesses). Part B (evaluation and reflection) left for Abhishek with facts and guiding questions.
+- 2026-11-17T07:46:20Z | P8 | Claude | Initial git commit of the full repo (local). Push to GitHub and Pages setup left to Abhishek (gh CLI not installed; needs his account).
+- 2026-11-17T07:48:57Z | P10 | Claude | Built Project2_Presentation.pptx (13 slides, speaker notes with a full script and Q&A prep) from the generated JSON, so slide numbers match the pages.

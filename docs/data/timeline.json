@@ -102,6 +102,18 @@
    "phase": "P9",
    "actor": "Claude",
    "text": "Wrote EVALUATION.md Part A (goal-by-goal evidence table and known weaknesses). Part B (evaluation and reflection) left for Abhishek with facts and guiding questions."
+  },
+  {
+   "ts": "2026-11-17T07:46:20Z",
+   "phase": "P8",
+   "actor": "Claude",
+   "text": "Initial git commit of the full repo (local). Push to GitHub and Pages setup left to Abhishek (gh CLI not installed; needs his account)."
+  },
+  {
+   "ts": "2026-11-17T07:48:57Z",
+   "phase": "P10",
+   "actor": "Claude",
+   "text": "Built Project2_Presentation.pptx (13 slides, speaker notes with a full script and Q&A prep) from the generated JSON, so slide numbers match the pages."
   }
  ],
  "prompts": [
@@ -123,7 +135,7 @@
  ],
  "by_actor": {
   "Human": 3,
-  "Claude": 14
+  "Claude": 16
  },
  "by_phase_actor": [
   {
@@ -138,6 +150,11 @@
   },
   {
    "phase": "P1",
+   "actor": "Claude",
+   "n": 1
+  },
+  {
+   "phase": "P10",
    "actor": "Claude",
    "n": 1
   },
@@ -168,6 +185,11 @@
   },
   {
    "phase": "P7",
+   "actor": "Claude",
+   "n": 1
+  },
+  {
+   "phase": "P8",
    "actor": "Claude",
    "n": 1
   },
