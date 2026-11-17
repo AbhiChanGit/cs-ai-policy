@@ -28,3 +28,4 @@ The first four lines were reconstructed from the Claude Code transcript timestam
 - 2026-11-17T16:34:04Z | P11 | Claude | Drafted EVALUATION.md Part B for Abhishek to review; timeline tasks now show who did each delegated step.
 - 2026-11-17T16:34:11Z | P11 | Claude | Bug: scripted edit of timeline.py dropped the closing bracket of human_tasks (SyntaxError); fixed with Edit.
 - 2026-11-17T16:47:34Z | P11 | Claude | Published: public GitHub repo AbhiChanGit/cs-ai-policy, GitHub Pages from main /docs; commit author set to the GitHub noreply address.
+- 2026-11-17T17:13:59Z | P11 | Claude | Renamed stale timeline heading 'Still to do by Abhishek' to reflect delegated task status.

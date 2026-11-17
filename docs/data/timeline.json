@@ -150,6 +150,12 @@
    "phase": "P11",
    "actor": "Claude",
    "text": "Published: public GitHub repo AbhiChanGit/cs-ai-policy, GitHub Pages from main /docs; commit author set to the GitHub noreply address."
+  },
+  {
+   "ts": "2026-11-17T17:13:59Z",
+   "phase": "P11",
+   "actor": "Claude",
+   "text": "Renamed stale timeline heading 'Still to do by Abhishek' to reflect delegated task status."
   }
  ],
  "prompts": [
@@ -176,7 +182,7 @@
  ],
  "by_actor": {
   "Human": 4,
-  "Claude": 21
+  "Claude": 22
  },
  "by_phase_actor": [
   {
@@ -202,7 +208,7 @@
   {
    "phase": "P11",
    "actor": "Claude",
-   "n": 5
+   "n": 6
   },
   {
    "phase": "P11",
