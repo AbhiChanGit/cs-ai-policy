@@ -1,0 +1,11 @@
+id,coder,stance,tone,ai_collaboration
+stonybrook,claude_blind_session,prohibited_by_default,cautious,no
+byui,claude_blind_session,encouraged,positive,yes
+pomona,claude_blind_session,instructor_decides,balanced,yes
+stanford,claude_blind_session,permitted_with_conditions,balanced,no
+cornell,claude_blind_session,prohibited_by_default,cautious,yes
+cmu,claude_blind_session,instructor_decides,balanced,no
+gatech,claude_blind_session,permitted_with_conditions,balanced,yes
+uc,claude_blind_session,instructor_decides,positive,yes
+dartmouth,claude_blind_session,prohibited_by_default,balanced,no
+uiuc,claude_blind_session,instructor_decides,balanced,no

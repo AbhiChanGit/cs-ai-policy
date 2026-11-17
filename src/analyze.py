@@ -1,9 +1,9 @@
 """Phase 3: turn the coded data into docs/data/findings.json for the dashboard.
 
 Reads data/policies.csv, data/coded.csv, data/se_courses.csv, data/se_coded.csv,
-data/human_labels.csv and the raw excerpts. Computes counts, cross tabs, a
+data/blind_labels.csv and the raw excerpts. Computes counts, cross tabs, a
 keyword-rule stance classifier, and Cohen's kappa for (a) keyword rule vs Claude
-and (b) human vs Claude when the human labels are filled in.
+and (b) a blind second coder (fresh Claude session that never saw coded.csv) vs the main labels.
 
 Usage: python src/analyze.py
 """
@@ -82,7 +82,7 @@ def build():
     coded = read_csv("coded.csv")
     se = {r["id"]: r for r in read_csv("se_courses.csv")}
     se_coded = read_csv("se_coded.csv")
-    human = read_csv("human_labels.csv")
+    blind = read_csv("blind_labels.csv")
 
     rows = []
     for c in coded:
@@ -95,19 +95,21 @@ def build():
     disagreements = [{"id": r["id"], "institution": r["institution"], "claude": r["stance"],
                       "keyword": r["keyword_stance"]} for r in rows if r["stance"] != r["keyword_stance"]]
 
-    # Human vs Claude (only rows the human has filled)
+    # Blind second coder vs main labels (only rows that are filled)
     by_id = {r["id"]: r for r in rows}
-    human_result = {}
+    blind_result = {}
     for field in ["stance", "tone", "ai_collaboration"]:
-        pairs = [(by_id[h["id"]][field], h[field + "_human"].strip()) for h in human
-                 if h[field + "_human"].strip()]
-        human_result[field] = {
+        pairs = [(by_id[h["id"]][field], h[field].strip()) for h in blind if h[field].strip()]
+        blind_result[field] = {
             "n": len(pairs),
             "agree": sum(a == b for a, b in pairs),
             "kappa": cohen_kappa([a for a, _ in pairs], [b for _, b in pairs]) if pairs else None,
         }
-    human_status = "complete" if all(v["n"] == len(human) for v in human_result.values()) else (
-        "pending" if all(v["n"] == 0 for v in human_result.values()) else "partial")
+    blind_status = "complete" if all(v["n"] == len(blind) for v in blind_result.values()) else (
+        "pending" if all(v["n"] == 0 for v in blind_result.values()) else "partial")
+    blind_disagreements = [{"id": h["id"], "field": f, "main": by_id[h["id"]][f], "blind": h[f]}
+                           for h in blind for f in ["stance", "tone", "ai_collaboration"]
+                           if h[f].strip() and h[f] != by_id[h["id"]][f]]
 
     se_rows = [{**se[s["id"]], **s} for s in se_coded]
 
@@ -130,7 +132,9 @@ def build():
         "validity": {
             "keyword_vs_claude": {"n": len(rows), "agree": kw_agree, "kappa": kw_kappa,
                                   "disagreements": disagreements},
-            "human_vs_claude": {"status": human_status, "sample_size": len(human), **human_result},
+            "blind_vs_claude": {"status": blind_status, "sample_size": len(blind),
+                                "coder": sorted({h["coder"] for h in blind}),
+                                "disagreements": blind_disagreements, **blind_result},
         },
         "institutions": rows,
         "se_courses": se_rows,
@@ -152,4 +156,5 @@ if __name__ == "__main__":
     print("tone:", {d['label']: d['n'] for d in f["tone"]})
     print("collaboration:", {d['label']: d['n'] for d in f["collaboration"]})
     print(f"keyword vs Claude: {v['agree']}/{v['n']} agree, kappa={v['kappa']:.3f}")
-    print("human vs Claude:", f["validity"]["human_vs_claude"]["status"])
+    b = f["validity"]["blind_vs_claude"]
+    print("blind coder vs Claude:", b["status"], {k: (b[k]["agree"], b[k]["n"], b[k]["kappa"]) for k in ["stance", "tone", "ai_collaboration"]})

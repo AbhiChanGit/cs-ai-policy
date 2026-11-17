@@ -16,7 +16,7 @@ Qualitative content analysis with a fixed codebook (`data/codebook.md`).
 1. Sample: 25 to 30 US institutions, mixed by type (private R1, public R1, other). For each, the most official AI statement that applies to CS students (department page first, then college, then university), plus SE course policies where a public syllabus exists.
 2. Each source is saved as an excerpt with URL and access date (`data/raw/*.txt`), so every label can be traced to text.
 3. Claude labels each source against the codebook (`data/coded.csv`), quoting the sentence that justified each label.
-4. Validity checks: (a) a transparent keyword rule labels stance independently and agreement with Claude is reported as Cohen's kappa; (b) Abhishek labels a 10 row blind sample (`data/human_labels.csv`) and kappa is reported when filled.
+4. Validity checks: (a) a transparent keyword rule labels stance independently and agreement with Claude is reported as Cohen's kappa; (b) a 10 row blind sample (`data/blind_labels.csv`) is labeled by a second coder and kappa is reported per field. Amendment 2026-11-17: Abhishek delegated this to a fresh Claude session that sees only the codebook and raw excerpts; the coder is recorded in the file.
 5. Aggregates feed the dashboard. No number on any page is typed by hand.
 
 ## Phases and acceptance criteria

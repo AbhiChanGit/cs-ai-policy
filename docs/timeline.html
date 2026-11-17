@@ -20,7 +20,7 @@
     <div class="card"><h3>Human contribution</h3><ul style="margin:0;padding-left:18px">
       <li>Chose the course, set the goal, and pasted the brief.</li>
       <li>Decided to delegate the build to Claude (agentic mode), keeping the professor email as his own task.</li>
-      <li>Owns the remaining human tasks below: blind labels, source spot checks, code review, evaluation and reflection.</li></ul></div>
+      <li>Delegated the remaining check tasks to Claude on 2026-11-17 (blind second coding, URL spot checks, test review notes, reflection draft); each is labeled below with who actually did it.</li></ul></div>
     <div class="card"><h3>Claude contribution</h3><ul style="margin:0;padding-left:18px">
       <li>Refused to fabricate a deck for work that did not exist; proposed the plan.</li>
       <li>Wrote SPEC, codebook, data collection, labels, analysis, tests and all four pages.</li>
@@ -64,7 +64,7 @@ for (const p of phases) {
   sp.appendChild(row);
 }
 
-table(document.getElementById("todo"), [{ key: "task", label: "Task" }, { key: "why", label: "Why it matters" }], D.human_tasks);
+table(document.getElementById("todo"), [{ key: "task", label: "Task" }, { key: "status", label: "Status" }, { key: "why", label: "Why it matters" }], D.human_tasks);
 
 function drawLog() {
   const q = document.getElementById("q").value.toLowerCase(), a = document.getElementById("fActor").value;

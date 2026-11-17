@@ -132,11 +132,20 @@ def test_keyword_kappa_reported(findings):
     assert v["n"] - v["agree"] == len(v["disagreements"])
 
 
-def test_human_sample_status(findings):
-    """Human blind-label check: 10 rows exist; if filled, kappa is computed (pending is reported, not faked)."""
-    h = findings["validity"]["human_vs_claude"]
+def test_blind_sample_status(findings):
+    """Blind second-coder check: 10 rows exist, the coder is named, and if filled, kappa is computed (pending is reported, not faked)."""
+    h = findings["validity"]["blind_vs_claude"]
     assert h["sample_size"] == 10
     assert h["status"] in {"pending", "partial", "complete"}
+    assert h["coder"] and all(c for c in h["coder"])
     if h["status"] == "pending":
-        pytest.skip("human_labels.csv not filled yet: Abhishek's 10-row blind labeling is pending")
+        pytest.skip("blind_labels.csv not filled yet")
     assert h["stance"]["kappa"] is not None
+
+
+def test_blind_labels_use_codebook_values():
+    """Every blind label is an allowed codebook value, so a typo cannot pass as a disagreement."""
+    allowed = {"stance": set(analyze.STANCES), "tone": set(analyze.TONES), "ai_collaboration": {"yes", "no"}}
+    for row in analyze.read_csv("blind_labels.csv"):
+        for field, ok in allowed.items():
+            assert row[field] == "" or row[field] in ok, (row["id"], field, row[field])

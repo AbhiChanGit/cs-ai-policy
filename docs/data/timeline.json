@@ -114,6 +114,42 @@
    "phase": "P10",
    "actor": "Claude",
    "text": "Built Project2_Presentation.pptx (13 slides, speaker notes with a full script and Q&A prep) from the generated JSON, so slide numbers match the pages."
+  },
+  {
+   "ts": "2026-11-17T16:34:04Z",
+   "phase": "P11",
+   "actor": "Human",
+   "text": "Asked Claude to perform the remaining human tasks (blind sample, spot checks, test review, reflection, publishing)."
+  },
+  {
+   "ts": "2026-11-17T16:34:04Z",
+   "phase": "P11",
+   "actor": "Claude",
+   "text": "Blind second coder (fresh Claude session, codebook and 10 raw files only): stance 10/10, kappa 1.00; collaboration 9/10, kappa 0.80; tone 5/10, kappa 0.26. Renamed human_labels.csv to blind_labels.csv with a coder column; SPEC amended."
+  },
+  {
+   "ts": "2026-11-17T16:34:04Z",
+   "phase": "P11",
+   "actor": "Claude",
+   "text": "Live spot check of 8 source URLs: 7 match word for word; Stony Brook excerpt trimmed a sentence and dropped a second condition (UPD approval). Label unchanged. Recorded in REVIEW.md with notes on 3 tests."
+  },
+  {
+   "ts": "2026-11-17T16:34:04Z",
+   "phase": "P11",
+   "actor": "Claude",
+   "text": "Drafted EVALUATION.md Part B for Abhishek to review; timeline tasks now show who did each delegated step."
+  },
+  {
+   "ts": "2026-11-17T16:34:11Z",
+   "phase": "P11",
+   "actor": "Claude",
+   "text": "Bug: scripted edit of timeline.py dropped the closing bracket of human_tasks (SyntaxError); fixed with Edit."
+  },
+  {
+   "ts": "2026-11-17T16:47:34Z",
+   "phase": "P11",
+   "actor": "Claude",
+   "text": "Published: public GitHub repo AbhiChanGit/cs-ai-policy, GitHub Pages from main /docs; commit author set to the GitHub noreply address."
   }
  ],
  "prompts": [
@@ -131,11 +167,16 @@
    "ts": "2026-11-17T07:27Z",
    "human": "\"Do all the steps you mentioned above for me, except drafting the professor email. And give me a ppt to present at the end of it.\"",
    "claude": "Accepted. Kept two items that cannot honestly be done by Claude as human tasks: the 10 row blind labeling (human_labels.csv) and the first person reflection in EVALUATION.md. Started with SPEC.md, CLAUDE.md and logs before any data work."
+  },
+  {
+   "ts": "2026-11-17 (P11)",
+   "human": "Just perform all the steps that I should do. gh cli is installed.",
+   "claude": "Did them, labeled honestly. The blind sample was coded by a fresh Claude session that saw only the codebook and raw excerpts, so it is reported as a blind second coder, not a human coder. Spot checks, test review notes and the reflection draft are marked as Claude's work at Abhishek's request. Publishing needed a GitHub login first."
   }
  ],
  "by_actor": {
-  "Human": 3,
-  "Claude": 16
+  "Human": 4,
+  "Claude": 21
  },
  "by_phase_actor": [
   {
@@ -156,6 +197,16 @@
   {
    "phase": "P10",
    "actor": "Claude",
+   "n": 1
+  },
+  {
+   "phase": "P11",
+   "actor": "Claude",
+   "n": 5
+  },
+  {
+   "phase": "P11",
+   "actor": "Human",
    "n": 1
   },
   {
@@ -201,20 +252,29 @@
  ],
  "human_tasks": [
   {
-   "task": "Fill the 10-row blind sample in data/human_labels.csv, then rerun src/run_tests.py",
-   "why": "Gives a human-vs-Claude kappa: the strongest evidence the labels are valid"
+   "task": "Blind 10-row second coding (data/blind_labels.csv)",
+   "status": "Done 2026-11-17 by a fresh Claude session at Abhishek's request (not a human coder)",
+   "why": "Tests whether the codebook is clear enough for an independent coder to reproduce the labels"
   },
   {
-   "task": "Spot-check 5 source URLs against data/raw excerpts",
-   "why": "Excerpts were pulled by a fetch tool; a human check confirms they are faithful"
+   "task": "Spot-check source URLs against data/raw excerpts",
+   "status": "Done 2026-11-17 by Claude at Abhishek's request: 8 live pages fetched, results in REVIEW.md",
+   "why": "Excerpts were pulled by a fetch tool; a live check confirms they are faithful"
   },
   {
-   "task": "Read 3 tests yourself and add notes to REVIEW.md",
+   "task": "Read 3 tests and add notes to REVIEW.md",
+   "status": "Notes drafted by Claude at Abhishek's request; Abhishek to confirm",
    "why": "The brief asks for documented direct review, not only Claude-written tests"
   },
   {
-   "task": "Write the reflection in EVALUATION.md",
+   "task": "Write the evaluation and reflection in EVALUATION.md",
+   "status": "Drafted by Claude at Abhishek's request; Abhishek to review and edit into his own words",
    "why": "The brief says the evaluation and reflection are completed primarily by the student"
+  },
+  {
+   "task": "Publish on GitHub and GitHub Pages",
+   "status": "See README for the live link",
+   "why": "The brief requires the project on GitHub and the web"
   }
  ]
 }

@@ -44,14 +44,21 @@ def build():
         "by_phase_actor": [{"phase": p, "actor": a, "n": n}
                            for (p, a), n in sorted(Counter((e["phase"], e["actor"]) for e in progress).items())],
         "human_tasks": [
-            {"task": "Fill the 10-row blind sample in data/human_labels.csv, then rerun src/run_tests.py",
-             "why": "Gives a human-vs-Claude kappa: the strongest evidence the labels are valid"},
-            {"task": "Spot-check 5 source URLs against data/raw excerpts",
-             "why": "Excerpts were pulled by a fetch tool; a human check confirms they are faithful"},
-            {"task": "Read 3 tests yourself and add notes to REVIEW.md",
+            {"task": "Blind 10-row second coding (data/blind_labels.csv)",
+             "status": "Done 2026-11-17 by a fresh Claude session at Abhishek's request (not a human coder)",
+             "why": "Tests whether the codebook is clear enough for an independent coder to reproduce the labels"},
+            {"task": "Spot-check source URLs against data/raw excerpts",
+             "status": "Done 2026-11-17 by Claude at Abhishek's request: 8 live pages fetched, results in REVIEW.md",
+             "why": "Excerpts were pulled by a fetch tool; a live check confirms they are faithful"},
+            {"task": "Read 3 tests and add notes to REVIEW.md",
+             "status": "Notes drafted by Claude at Abhishek's request; Abhishek to confirm",
              "why": "The brief asks for documented direct review, not only Claude-written tests"},
-            {"task": "Write the reflection in EVALUATION.md",
+            {"task": "Write the evaluation and reflection in EVALUATION.md",
+             "status": "Drafted by Claude at Abhishek's request; Abhishek to review and edit into his own words",
              "why": "The brief says the evaluation and reflection are completed primarily by the student"},
+            {"task": "Publish on GitHub and GitHub Pages",
+             "status": "See README for the live link",
+             "why": "The brief requires the project on GitHub and the web"},
         ],
     }
     os.makedirs(os.path.dirname(OUT), exist_ok=True)

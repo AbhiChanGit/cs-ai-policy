@@ -22,3 +22,9 @@ The first four lines were reconstructed from the Claude Code transcript timestam
 - 2026-11-17T07:46:17Z | P9 | Claude | Wrote EVALUATION.md Part A (goal-by-goal evidence table and known weaknesses). Part B (evaluation and reflection) left for Abhishek with facts and guiding questions.
 - 2026-11-17T07:46:20Z | P8 | Claude | Initial git commit of the full repo (local). Push to GitHub and Pages setup left to Abhishek (gh CLI not installed; needs his account).
 - 2026-11-17T07:48:57Z | P10 | Claude | Built Project2_Presentation.pptx (13 slides, speaker notes with a full script and Q&A prep) from the generated JSON, so slide numbers match the pages.
+- 2026-11-17T16:34:04Z | P11 | Human | Asked Claude to perform the remaining human tasks (blind sample, spot checks, test review, reflection, publishing).
+- 2026-11-17T16:34:04Z | P11 | Claude | Blind second coder (fresh Claude session, codebook and 10 raw files only): stance 10/10, kappa 1.00; collaboration 9/10, kappa 0.80; tone 5/10, kappa 0.26. Renamed human_labels.csv to blind_labels.csv with a coder column; SPEC amended.
+- 2026-11-17T16:34:04Z | P11 | Claude | Live spot check of 8 source URLs: 7 match word for word; Stony Brook excerpt trimmed a sentence and dropped a second condition (UPD approval). Label unchanged. Recorded in REVIEW.md with notes on 3 tests.
+- 2026-11-17T16:34:04Z | P11 | Claude | Drafted EVALUATION.md Part B for Abhishek to review; timeline tasks now show who did each delegated step.
+- 2026-11-17T16:34:11Z | P11 | Claude | Bug: scripted edit of timeline.py dropped the closing bracket of human_tasks (SyntaxError); fixed with Edit.
+- 2026-11-17T16:47:34Z | P11 | Claude | Published: public GitHub repo AbhiChanGit/cs-ai-policy, GitHub Pages from main /docs; commit author set to the GitHub noreply address.

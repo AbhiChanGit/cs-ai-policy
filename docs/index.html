@@ -126,12 +126,14 @@ table(document.getElementById("tSe"), [
   { key: "stance_quote", label: "Evidence", render: (r) => `<q>${esc(r.stance_quote)}</q> <a href="${esc(r.url)}" target="_blank" rel="noopener">source</a>` },
 ], F.se_courses);
 
-const v = F.validity, h = v.human_vs_claude;
+const v = F.validity, h = v.blind_vs_claude;
 document.getElementById("validity").innerHTML =
   `<p><b>Keyword rule vs Claude (stance):</b> ${kv.agree}/${kv.n} agree, Cohen's kappa ${kv.kappa.toFixed(3)}.</p>
    <details><summary>${kv.disagreements.length} disagreements</summary><ul>${kv.disagreements.map((d) => `<li>${esc(d.institution)}: Claude <i>${nice(d.claude)}</i>, rule <i>${nice(d.keyword)}</i></li>`).join("")}</ul></details>
-   <p><b>Human blind sample (${h.sample_size} rows):</b> ${h.status === "pending" ? '<span class="pill skip">pending</span> Abhishek fills <code>data/human_labels.csv</code>' :
-     ["stance", "tone", "ai_collaboration"].map((k) => `${nice(k)} ${h[k].agree}/${h[k].n}, kappa ${h[k].kappa == null ? "n/a" : h[k].kappa.toFixed(2)}`).join("; ")}</p>`;
+   <p><b>Blind second coder (${h.sample_size} rows):</b> ${h.status === "pending" ? '<span class="pill skip">pending</span> <code>data/blind_labels.csv</code> is empty' :
+     ["stance", "tone", "ai_collaboration"].map((k) => `${nice(k)} ${h[k].agree}/${h[k].n}, kappa ${h[k].kappa == null ? "n/a" : h[k].kappa.toFixed(2)}`).join("; ")}</p>
+   <p class="note">The second coder was a fresh Claude session given only the codebook and the 10 raw excerpt files; it never saw the main labels. It is an independent pass, not a human coder, so it tests whether the codebook is clear rather than whether the labels match human judgment.</p>
+   ${h.disagreements && h.disagreements.length ? `<details><summary>${h.disagreements.length} blind coder disagreements</summary><ul>${h.disagreements.map((d) => `<li>${esc(d.id)} (${nice(d.field)}): main <i>${nice(d.main)}</i>, blind <i>${nice(d.blind)}</i></li>`).join("")}</ul></details>` : ""}`;
 
 for (const [id, key] of [["fStance", "stance"], ["fTone", "tone"], ["fLevel", "level"]]) {
   const s = document.getElementById(id);

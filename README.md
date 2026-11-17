@@ -5,6 +5,8 @@ Built with **agentic development** in Claude Code: the agent wrote the code; the
 
 ## Pages
 
+Live site: https://abhichangit.github.io/cs-ai-policy/
+
 | Page | What it shows |
 |---|---|
 | [Findings dashboard](docs/index.html) | Stance, tone, AI-as-collaborator framing and disclosure across 26 institutions; 8 software engineering syllabi; searchable sources with the quote behind every label |
